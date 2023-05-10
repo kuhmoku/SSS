@@ -1,0 +1,55 @@
+*  {
+          padding : 0px ;
+          margin : 0px ;
+}
+
+#surround { 
+/*        width: 772px; */
+background-color: #FFFFCC;
+/* background-color: #E0FFFF; */
+          text-align: center;
+          margin : 0px auto 
+}
+
+#top {
+        border-bottom: 1px solid navy;   
+        background-image: url('image/logoc3.png');
+          padding: 5px;
+}
+
+/*
+#l-box {
+        float: left;
+        width: 200px; 
+background-color: #FFFFCC;
+}
+*/
+
+#middle {
+/*        float: right;
+        width: 570px;  
+background-color: #FFFFCC;
+*/
+background-color: #E0FFFF
+          padding: 20px;
+          text-align: left;
+}
+
+#bottom {
+/*       clear: both;
+        width: 770px;  */
+       background-color: #FFFFCC; 
+/* background-color: #E0FFFF */
+          text-align: right;
+}
+
+h1 {
+          padding: 10px;
+          margin: 5px;
+}
+
+h2 {
+          padding: 8px;
+          margin: 3px;
+}
+
