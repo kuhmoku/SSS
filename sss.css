@@ -5,7 +5,7 @@
 
 #surround { 
 /*        width: 772px; */
-background-color: #FFFFCC;
+background-color: #FFFFCC; 
 /* background-color: #E0FFFF; */
           text-align: center;
           margin : 0px auto 
@@ -26,11 +26,13 @@ background-color: #FFFFCC;
 */
 
 #middle {
-/*        float: right;
-        width: 570px;  
+/*
+        float: right;
+        width: 570px;  */
 background-color: #FFFFCC;
-*/
+/*
 background-color: #E0FFFF
+*/
           padding: 20px;
           text-align: left;
 }
