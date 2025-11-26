@@ -1,0 +1,127 @@
+\documentclass[a4paper,12pt]{jsarticle}
+%\documentclass[a4paper]{jarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+%\documentstyle[12pt,amscd]{amsart}%
+\baselineskip=12pt
+\def\labelenumi{(\theenumi)}
+\def\theenumi{\roman{enumi}}
+%
+\newtheorem{Thm}{定理}[section]
+%
+\theoremstyle{definition}
+\newtheorem{Theorem}[Thm]{定理}
+\newtheorem{Lemma}[Thm]{補題}
+\newtheorem{Corollary}[Thm]{系}
+\newtheorem{Proposition}[Thm]{命題}
+\newtheorem{Definition}[Thm]{定義}
+\newtheorem{Example}[Thm]{例}
+%
+\newtheorem{Exercise}{問}
+%
+\theoremstyle{remark}
+\newtheorem{Remark}{注意}
+\renewcommand{\theRemark}{}
+%
+%
+\font\sy=cmsy10
+\font\fm=eufm10
+\font\xm=msam10
+\font\ym=msbm10  %In Ver.2, xm and ym should be replaced by am and bm.
+\newcommand{\Aut}{{\rm Aut}}
+\newcommand{\GL}{{\rm GL}}
+\newcommand{\del}{\partial}
+\newcommand{\N}{{\text{\ym N}}}
+\newcommand{\Z}{\text{\ym Z}}
+\renewcommand{\P}{\text{\ym P}}
+\newcommand{\Q}{\text{\ym Q}}
+\newcommand{\R}{\text{\ym R}}
+\newcommand{\T}{\text{\ym T}}
+\newcommand{\C}{\text{\ym C}}
+\newcommand{\cF}{{\hbox{\sy F}}}
+%\newcommand{\fallingdotseq}{=}
+%
+%\title{{\bf 群論}}
+%\author{山上　滋}
+\begin{document}
+%\maketitle
+\begin{center}
+ \textbf{\Large 作用素解析}
+\end{center}
+
+\bigskip
+\begin{itemize}
+\item
+ややもすれば勉強（知識・計算技術・概念の修得を含む）だけで終わってしまいがちな数学の教程において、
+一服の清涼剤というか、はたまた煩悩の火種というか、そういったものを提供したいのであるが、
+多くは望まぬ、慢性的日常への刺激となれば幸い。
+\item 
+授業は、次の資料に基づいて進める。線型代数の本を常に参照できるようにしておくこと。
+
+http://www.math.nagoya-u.ac.jp/\~{}yamagami/teaching/topics/oa2010.pdf
+
+%どのような形・内容であれ、授業および資料についてのコメントを歓迎する。
+\item 
+授業は、２コマ続きなので、毎回、講義（9:00--10:15, 10:30--11:30)＋問題演習（11:30--12:00)を標準とし、
+資料の中にある問題のうち指示されたものを解きレポートにまとめ、次回の演習時までに提出する。
+%１・2回目、３題、３・４回目、２題。
+
+各問題は、原則２点満点（一部の問題は、さらに加点する）で採点し、集計結果を随時掲示する。
+このパートでの評価は、次で算定する。総得点を $x$ とするとき、
+% 「C」取得の目安は、総計１０点以上である。詳しくは、次の式で算出する換算点数によって評価する。
+\[
+\begin{cases}
+D &\text{if $x \leq 7$}, \\
+C &\text{if $8 \leq x \leq 10$}, \\
+B &\text{if $11 \leq x \leq 13$},\\
+A &\text{if $x \geq 14$.}
+\end{cases}
+\]
+
+同一と判断されるレポートが複数見つかった場合は、点数を人数で割る。
+したがって、仮に満点のレポートであっても３人以上で共有した場合は、
+０点となる。
+
+% 一度評価を下した問題の再提出は認めない。提出前によく吟味すること。
+\item
+オフィスアワーは、水曜１２：３０--１３：３０（理A３４９）。予約等は、
+
+yamagami@math.nagoya-u.ac.jp
+
+まで。
+% 授業の情報は、
+
+% http://www.math.nagoya-u.ac.jp/\~{}yamagami/teaching/complex/hukuso2010.html
+
+% に随時掲載の予定。
+\end{itemize}
+
+
+%% 「教えてもらう」から「自ら学び取る」姿勢に方向転換へ。
+%% 問題練習は、テキスト講義ノートを参考に、
+%% 各自の判断で行う。
+
+\medskip
+{\large 進度予定表}
+
+\medskip
+\begin{tabular}{|l|l|}
+\hline
+10/4 & 行列のノルムとスペクトル（２、３、９）
+\\
+\hline
+10/18 & グラフと隣接行列とペロン・フロベニウス（１３、１４、１７の中から２題）
+\\
+\hline
+10/25 & A型とD型のグラフ（１９、２０、２１の中から2題）
+\\
+\hline
+11/1 & E型のグラフ（２２、２３）
+\\
+\hline
+11/8 & グラフの分類（演習なし）
+\\
+\hline
+\end{tabular}
+\end{document}

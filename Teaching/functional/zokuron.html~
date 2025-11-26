@@ -1,0 +1,142 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+   <meta name="GENERATOR" content="Mozilla/4.73 [ja] (Win98; U) [Netscape]">
+<script type="text/javascript" src="http://latex.codecogs.com/latex.js"></script>
+   <title>関数解析入門</title>
+<link rel="stylesheet" type="text/css" href="../latex.css" />
+</head>
+<body bgcolor="#FFFFCC">
+<h2>
+解析学続論授業日誌
+</h2>
+
+<ul>
+<li>
+<a href="#c414">完備距離空間</li>
+<!--
+<li>
+<a href="#c421">バナッハ空間</li>
+<li>
+<a href="#c428">近似定理</li>
+<li>
+<a href="#c512">ヒルベルト空間</li>
+<li>
+<a href="#c519">線型汎関数</li>
+<li>
+<a href="#c526">ラドン測度</li>
+<li>
+<a href="#c602">試験１</li>
+<li>
+<a href="#c609">バナッハの有界性定理</li>
+<li>
+<a href="#c617">ヒルベルト空間上の線型作用素</li>
+<li>
+<a href="#c623">フーリエ変換</li>
+<li>
+<a href="#c730">スペクトル</li>
+<li>
+<a href="#c707">スペクトル分解定理</li>
+<li>
+<a href="#c714">コンパクト作用素</li>
+<li>
+<a href="#c721">？</li>
+<li>
+<a href="#c728">？</li>
+</ul>
+-->
+<hr>
+
+<h3>
+<a NAME="c414"></a>完備距離空間</h3>
+<p>
+<br>
+テストということで。
+$\int_a^b$
+<br>
+\[\int_a^b dx\]
+</p>
+
+<!--
+<h3>
+<a NAME="c421"></a>バナッハ空間</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c428"></a>近似定理</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c512"></a>ヒルベルト空間</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c519"></a>線型汎関数</h3>
+<p>
+</p>
+
+
+<h3>
+<a NAME="c526"></a>ラドン測度</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c602"></a>試験１</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c609"></a>バナッハの有界性定理</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c616"></a>ヒルベルト空間と線型作用素</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c623"></a>フーリエ変換</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c630"></a>スペクトル</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c707"></a>スペクトル分解定理</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c714"></a>コンパクト作用素</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c721"></a></h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c728"></a></h3>
+<p>
+</p>
+--> 
+
+<hr><a href="../teaching.html">上界へ</a>
+</body>
+</html>
+
+<!--
+<p>
+<img src="http://www.codecogs.com/eq.latex?\begin{align*} \int_a^b f(x)\mathrm{d}x = & \int_{-\infty}^{\infty}f(\psi(t))\psi^{\prime}(t)\mathrm{d}t \approx h\sum_{k=-N_1}^{N_2}f(\psi(kh))\psi^{\prime}(kh) \intertext{with} \psi(t) = & \frac{b-a}{2}\tanh\left(\frac{\pi}{2}\sinh t\right)+\frac{b+a}{2}.\end{align*}" />
+</p>
+-->

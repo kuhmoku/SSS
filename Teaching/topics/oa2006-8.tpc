@@ -1,0 +1,40 @@
+%WinTpicVersion3.08
+\unitlength 0.1in
+\begin{picture}( 18.5000,  2.3000)(  3.5000, -4.0000)
+% DOT 0 0 3 0
+% 3 1200 400 800 400 400 400
+% 
+\special{pn 20}%
+\special{sh 1}%
+\special{ar 1200 400 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 800 400 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 400 400 10 10 0  6.28318530717959E+0000}%
+% STR 2 0 3 0
+% 3 350 240 350 340 2 0
+% $1$
+\put(3.5000,-3.4000){\makebox(0,0)[lb]{$1$}}%
+% STR 2 0 3 0
+% 3 750 240 750 340 2 0
+% $2$
+\put(7.5000,-3.4000){\makebox(0,0)[lb]{$2$}}%
+% STR 2 0 3 0
+% 3 1150 240 1150 340 2 0
+% $3$
+\put(11.5000,-3.4000){\makebox(0,0)[lb]{$3$}}%
+% LINE 2 0 3 0
+% 2 400 400 1300 400
+% 
+\special{pn 8}%
+\special{pa 400 400}%
+\special{pa 1300 400}%
+\special{fp}%
+% LINE 2 2 3 0
+% 2 1400 400 2200 400
+% 
+\special{pn 8}%
+\special{pa 1400 400}%
+\special{pa 2200 400}%
+\special{dt 0.045}%
+\end{picture}%

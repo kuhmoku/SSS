@@ -1,0 +1,214 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+   <meta name="GENERATOR" content="Mozilla/4.73 [ja] (Win98; U) [Netscape]">
+<script type="text/javascript" src="http://latex.codecogs.com/latex.js"></script>
+   <title>複素解析</title>
+<!--<BASE HREF="http://157.80.53.243/~yamagami/index.html">-->
+<link rel="stylesheet" type="text/css" href="../latex.css" />
+</head>
+<body bgcolor="#FFFFCC">
+<h2>
+複素関数論授業日誌
+</h2>
+
+<ul>
+<li>
+<a href="#c415">４月１５日</a>（複素数の幾何学）</li>
+<li>
+<a href="#c422">４月２２日</a>（複素級数の収束）</li>
+<li>
+<a href="#c506">５月０６日</a>（試験１）</li>
+<!--
+<li>
+<a href="#c513">５月１３日</a>（べき級数の収束半径）</li>
+<li>
+<a href="#c520">５月２０日</a>（べき級数の計算）</li>
+<li>
+<a href="#c527">５月２７日</a>（複素関数の微分）</li>
+<li>
+<a href="#c529">５月２９日</a>（試験２）</li>
+<li>
+<a href="#c610">６月１０日</a>（複素関数の積分）</li>
+<li>
+<a href="#c617">６月１７日</a>（コーシーの積分定理）</li>
+<li>
+<a href="#c624">６月２４日</a>（コーシーの積分公式）</li>
+<li>
+<a href="#c701">７月０１日</a>（試験３）</li>
+<li>
+<a href="#c708">７月０８日</a>（留数計算）</li>
+<li>
+<a href="#c715">７月１５日</a>（定積分の計算）</li>
+<li>
+<a href="#c722">７月２２日</a>（試験４）</li>
+<li>
+<a href="#c729">７月２９日</a>（対数関数）</li>
+-->
+</ul>
+<hr>
+
+<h3>
+<a NAME="c415"></a>４月１５日</h3>
+<p>
+授業は、<a href="./hukuso2010.pdf">この資料</a>にしたがって進める。
+<br>
+<a href="./complex2010.pdf">
+教科書
+<!--
+http://www.math.nagoya-u.ac.jp/~yamagami/teaching/complex/complex2010.pdf
+-->
+</a>
+の該当箇所を事前に印刷・予習しておくこと。
+<br>
+ネット上の参考書として、例えば
+<br>
+<a href="http://collie.low-temp.sci.yamaguchi-u.ac.jp/~ashida/work/comp.pdf">
+http://collie.low-temp.sci.yamaguchi-u.ac.jp/~ashida/work/comp.pdf</a>
+<br>
+<a href="http://math.sfsu.edu/beck/papers/complex.pdf">
+http://math.sfsu.edu/beck/papers/complex.pdf</a>
+<br>
+を挙げておく。
+</p>
+教科書の指定で混乱があったようです。私の与り知らないところで生協に登録されていた本があったようで、
+それを購入した方は、申し訳ありませんが、そのまま参考書としてお使い下さい。
+本の内容自体は、授業とほぼ一緒です。まだ、購入していないかたは、
+参考書の選択肢の一つとしてお考え下さい。
+<br>
+今日は、複素数の幾何学と題して話してみましたが、とくに円分方程式の解の幾何学的意味と計算を復習しておいて下さい。
+<br>
+4月20日のオフィスアワーは都合により休止といたします。
+<p>
+<br>
+<!--
+複素級数 $\displaystyle \sum_{n=0}^\infty c_n$ の収束。
+<br>
+\[ e^{i\theta} = \cos\theta + i\sin\theta.\]
+-->
+</p>
+
+<h3>
+<a NAME="c422"></a>４月２２日</h3>
+<p>
+今日は、大部分は復習のつもりだったのだが、絶対収束の話、思い出していただけただろうか。
+数列もそうだが、級数はそれ以上に重要であるにもかかわらず触れられる機会が不足しがちの傾向あり。
+これだけをまとめてするには時間がもったいないし、かと言って、
+適当にばらまいてという形も意外と取りにくい、という予測に基づいての復習だったのであるが、
+「総和」と（部分和の極限としての）「級数」の意味の違いは、新たな内容であろうか。
+<br>
+具体的な級数が絶対収束かどうかは、微積分の教科書で取り上げられていることでもあり、
+詳しいことは省略した。
+もし、記憶があやふやなところが少しでもあれば、微積分で使った教科書等で復習に努められたい。
+絶対収束の概念は、複素級数においても有効であり、今後、繰り返し取り扱うことになるのだが、
+ごく簡単な例示として、級数による Euler の公式の正当性を今日のゴールとした。
+<br>
+次回（5月6日）の試験は、2回分の授業内容の基本的なところの確認である。
+<p>
+遅くなりましたが、<a href="./complex2010-s1.pdf">問１６までの解答</a>です。
+TAの松田一徳さんの助力によるものですが、ご質問等は、山上の方までお願いします。
+</p>
+
+<h3>
+<a NAME="c506"></a>５月０６日</h3>
+<p>
+簡単な復習の後で、<a href="./complex2010-1.pdf">1回目の試験</a>を行った。
+結果は、今週中に掲示の予定であるが、採点していて気がついたところを少々。
+<br>
+$\fbox{1}$ (i) は、説明を求めたにもかかわらず、書き方が不十分なものが多かった。
+<br>
+(ii) は、Im(z) > 0 の条件を無視するもの後を絶たず。(iii) の図示ができないものも散見された。
+<br>
+$\fbox{2}$ (i) の説明も足りないもの多し。(ii) の処理ができたもの極めて少なし。
+(iii) も満足できるものは、２ー３名のみ。
+</p>
+
+<!--
+<h3>
+<a NAME="c513"></a>５月１３日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c520"></a>５月２０日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c527"></a>５月２７日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c529"></a>５月２９日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c610"></a>６月１０日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c617"></a>６月１７日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c624"></a>６月２４日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c701"></a>７月０１日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c708"></a>７月０８日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c715"></a>７月１５日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c722"></a>７月２２日</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c729"></a>７月２９日</h3>
+<p>
+</p>
+-->
+
+<hr><a href="../teaching.html">上の階へ</a>
+</body>
+</html>
+
+<!--
+キーワード：
+１　絶対値、偏角と主値、オイラーの公式、１のｎ乗根　　　　　　　　　　
+２　コーシー・リーマンの定理　　　　　　　　　　　　　　　　　　　　　
+３　初等関数、逆関数の正則性、多価性と分枝　　　　　　　　　　　　　　
+４　複素線積分、コーシーの定理、コーシーの積分公式　　　　　　　　　　
+５　ベキ級数の収束半径、正則関数のベキ級数展開　　　　　　　　　　　　
+６　孤立特異点、ローラン展開、留数定理、実積分への応用　　　　　　　　
+-->
+
+<!--
+<p>
+関数　the function  $\sin(x)$ を積分すると
+\[\int \sin x\, dx = - \cos x.\] となるので 
+\[ \int_0^{\pi/2} = .\]
+inline の位置が上の方にずれるのだが。まあ使える
+</p>
+<p>
+<img src="http://www.codecogs.com/eq.latex?\begin{align*} \int_a^b f(x)\mathrm{d}x = & \int_{-\infty}^{\infty}f(\psi(t))\psi^{\prime}(t)\mathrm{d}t \approx h\sum_{k=-N_1}^{N_2}f(\psi(kh))\psi^{\prime}(kh) \intertext{with} \psi(t) = & \frac{b-a}{2}\tanh\left(\frac{\pi}{2}\sinh t\right)+\frac{b+a}{2}.\end{align*}" />
+</p>
+-->
+

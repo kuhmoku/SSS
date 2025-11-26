@@ -1,0 +1,186 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+   <meta name="GENERATOR" content="Mozilla/4.73 [ja] (Win98; U) [Netscape]">
+<!--<script type="text/javascript" src="http://latex.codecogs.com/latex.js"></script>-->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+    </script>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+    </script>
+    <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+   <title>関数解析入門</title>
+<link rel="stylesheet" type="text/css" href="../latex.css" />
+</head>
+<body bgcolor="#FFFFCC">
+<h2>
+解析学<font style="color:#FF3C00;">俗論</font>２０１２
+</h2>
+
+<p> 
+下手な講義といえども、あれこれ準備はしてるんだな、わからないだろうけれど。
+それで、はたと気づいたことが、ルベーグ積分と函数解析の間の思わぬギャップ。
+<br>
+何かというと、可積分関数の連続関数による近似。まともな本であれば書いてあることなんだが、
+ルベーグ積分の授業でそこまでやることは稀なのではないか。
+ちょっと鬱陶しいし、時間もないし、収束定理の使い方のお稽古もあるし。
+<br>
+一方、関数解析の授業としては、この連続関数の濃密性(density のことね)というか測度の正則性というか、
+そういったものは、当たり前だね、知ってるね、という前提で話を始めてしまいがちなんだな。
+やはり説明しだすと面倒だから。
+<br>
+しかし、まともな数学の学生であれば、大いに戸惑うのではなかろうか。
+というか、困惑しないようでは、数学の学生と言えないな。
+言われたことを、そのまま、はいはいそうですか、と頷いているようでは。
+<br>
+うーむ、困った。せめて、ギャップの存在を指摘した上で、各自勉強して隙間を埋めておいてね、とでもするか。
+そもそも、測度中心で積分をやるからこういうことが起こるんだな、やはり Riesz の偉大さよ。
+Daniell 積分で埋めたかったら、
+<a target="_blank" href="http://sss.sci.ibaraki.ac.jp/teaching/integral/integral2007.pdf"> 
+ルベーグ積分速講</a>。
+<br>
+おっと、怪我の功名、この隙間の存在が意識されているかどうかで、関数解析の本の判断材料になり得るか。
+かなりの数の本が失格のような気がする。怖いことだ。
+</p>
+<p>
+次はウィーン大学の Gerald Teschl 先生の１６０ページほどの講義ノートであるが、
+この授業の内容を扱っているだけでなく必要な予備知識も提供してくれる。
+記述の仕方は親切かつ明解であり、
+気のあった仲間でゼミでもすると下手な授業を聞くよりはよっぽど有意義な時間を過ごせるであろう。
+上で指摘した隙間のところもしっかり認識して書かれているし、
+ヒルベルト空間のテンソル積まである。お薦めである。
+<br>
+<a target="_blank" href="http://www.mat.univie.ac.at/~gerald/ftp/book-fa/">
+Topics in Real and Functional Analysis</a> 
+by Gerald Teschl. 
+<p>
+一応、この授業の講義ノートも挙げておくか、
+<a target="_blank" href="http://www.math.nagoya-u.ac.jp/~yamagami/teaching/functional/hilbert2011.pdf"> 
+関数解析入門２０１１</a> と
+<a target="_blank" href="http://www.math.nagoya-u.ac.jp/~yamagami/teaching/functional/zokuron2011.pdf">
+進度予定表</a>。
+</p>
+
+<ul>
+<li>
+<a href="#c412">完備距離空間(4/12)</li>
+<!--
+<li>
+<a href="#c419">バナッハ空間(4/19)</li>
+<li>
+<a href="#c426">近似定理(4/26)</li>
+<li>
+<a href="#c510">ヒルベルト空間(5/10)</li>
+<li>
+<a href="#c517">線型汎関数(5/17)</li>
+<li>
+<a href="#c524">双対空間(5/24)</li>
+<li>
+<a href="#c531">試験１(5/31)</li>
+<li>
+<a href="#c607">ヒルベルト空間上の線型作用素(6/07)</li>
+<li>
+<a href="#c614">フーリエ変換(6/14)</li>
+<li>
+<a href="#c621">スペクトル(6/21)</li>
+<li>
+<a href="#c628">試験２(6/28)<li>
+<li>
+<a href="#c705">バナッハの有界性定理(7/05)</li>
+<li>
+<a href="#c712">コンパクト作用素(7/12)</li>
+<li>
+<a href="#c719">リース・シャウダーの定理(7/19)<li>
+<li>
+<a href="#c726">試験３(7/26)</li>
+</ul>
+-->
+<hr>
+
+<h3>
+<a NAME="c412"></a>完備距離空間(4/12)</h3>
+<p>
+</p>
+
+<!--
+<h3>
+<a NAME="c419"></a>バナッハ空間(4/19)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c426"></a>近似定理(4/26)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c510"></a>ヒルベルト空間(5/10)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c517"></a>線型汎関数(5/17)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c524"></a>双対空間(5/24)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c5/31"></a>試験１(5/31)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c607"></a>ヒルベルト空間と線型作用素
+(6/7)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c614"></a>フーリエ変換
+(6/14)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c621"></a>スペクトル
+(6/21)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c628"></a>
+(6/28)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c705"></a>バナッハの有界性定理(7/05)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c712"></a>コンパクト作用素(7/12)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c719"></a>リース・シャウダーの定理(7/19)</h3>
+<p>
+</p>
+
+<h3>
+<a NAME="c726">試験３(7/26)</a></h3>
+<p>
+</p>
+--> 
+
+<hr><a href="../teaching.html">上界へ</a>
+</body>
+</html>
+

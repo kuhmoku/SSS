@@ -1,0 +1,1578 @@
+\documentclass[a4paper,12pt]{amsart}
+%\documentclass[a4paper,12pt]{jarticle}
+\input definition.tex
+\newtheorem{Exercise}{Problem}
+%\newtheorem{Exercise}{Quiz}
+\begin{document}
+\begin{center}
+{\large\bf Operator Analysis}
+\end{center}
+
+\noindent Period: 2009, winter term, Tuesday 10:30--12:00
+
+\noindent Lecturer:
+Yamagami Shigeru
+
+\medskip
+\noindent Synopsis:\\
+Graph theory is known to have vast applications in combinatorial
+problems. Turning viewpoints into its analytical aspect,
+we will be much involved with manipulating linear operators.
+In this course, we shall mainly work with finite graphs and
+perform the spectral analysis for graphs having smaller operator norms,
+through which we will have a good experince in mathematical classifications.
+
+% http://www-mi.sci.ibaraki.ac.jp/\~{}yamagami/set2005.pdf
+
+\medskip
+\noindent Prerequisite:\\
+Set theory (basic notions and terminology)\\
+Linear algebra (undergraduate level)\\
+Analysis (limit arguments in euclidean spaces)
+
+\medskip
+\noindent References:\\ 
+F.M.~Goodman, P.~de la Harpe and V.~Jones, 
+Coxeter Graphs and Towers of Algebras, 
+Springer, 1989.
+\\
+J.~Fr\"ohlich and T.~Kerler, 
+Quantum Groups, Quantum Categories and Quantum Field Theory, 
+Lec.~Notes in Math.~1542(1993), Springer.\\
+http://sss.sci.ibaraki.ac.jp/teaching/oa2009.pdf
+
+\medskip
+\noindent Plan:
+
+\medskip
+\begin{tabular}{|l|l|}
+\hline
+10/06 & Overviews on the course and the prerequisite\\
+\hline
+10/13 & Spectral properties of hermitian operators\\
+\hline
+10/20 & Problem session I\\
+\hline
+10/27 & Graphs and isomorphisms\\
+\hline
+11/10 & Norm of incidence matrices\\ 
+\hline
+11/17 & Problem session II\\
+\hline
+11/24 & Perron-Frobenius theorem\\
+\hline
+12/1 & Spectral analysis of graphs of type A and D\\
+\hline
+12/8 & Graphs of Norm $2$\\
+\hline
+12/15 & Problem session III\\
+\hline
+12/22 & Spectral analysis of graphs of type E\\
+\hline
+01/12 & Computation of norms for graphs of type E\\
+\hline
+01/19 & Classification of graphs of smaller norm\\
+\hline
+01/26 & Problem session IV\\
+\hline
+\end{tabular}
+
+% \quad
+% \begin{minipage}{6cm}
+
+% \end{minipage}
+
+\pagebreak
+\section{Spectral Properties of Hermitian Matrices}
+
+Given a square matrix $A = (a_{ij})$, let 
+$\sigma(A)$ be the set of eigenvalues of $A$, which 
+is referred to as the \textbf{spectrum} (set) of $A$. 
+There are several characterizations of $\sigma(A)$: 
+(i) $\sigma(A) = \{ \lambda \in \C; \det( \lambda I -A) = 0\}$,  
+(ii) $\sigma(A) = \{ \lambda \in \C; 
+\text{$\lambda I -A$ is not invertible} \}$ and so on. 
+The \textbf{spectral radius} of $A$ is then defined to be 
+\[
+r(A) = \max \{ |\lambda|; \lambda \in \sigma(A) \}.
+\]
+
+The \textbf{operator norm} of $A$ is, by definition, 
+\[
+\| A\| = \sup \{ \| A\xi\|; \xi \in \C^n, \| \xi\| = 1\}.
+\]
+Here $\| \xi\| = \sqrt{(\xi|\xi)}$ denotes 
+the ordinary inner product norm 
+of $\xi$. The norm $\| A\|$ is characterized as the 
+largest constant satisfying 
+\[
+\| A\xi\| \leq \| A\|\, \| \xi\|
+\quad
+\text{for any $\xi$.}
+\]
+In other words, 
+\[
+\| A\| = \sup \{ \| A\xi\|/\| \xi\|; 0 \not= \xi \in \C^n\}.
+\]
+
+\begin{Exercise}
+Show that 
+\[
+\| A\| = \sup \{ \| A \xi\|; \xi \in \C^n,  \| \xi\| \leq 1\}
+= \sup \{ |(\xi|A\eta)|; \| \xi\| \leq 1, \| \eta\| \leq 1\}.
+\]
+\end{Exercise}
+
+\begin{Exercise}
+Compute the norm for diagonal matrices. 
+\end{Exercise}
+
+\begin{Proposition}
+We have the inequality $r(A) \leq \| A\|$, i.e., 
+\[
+\sigma(A) \subset \{ \lambda \in \C; |\lambda| \leq \| A\| \}.
+\]
+\end{Proposition}
+
+\begin{proof}
+Let $\lambda \in \sigma(A)$ with $\xi$ an eigenvector. Then 
+\[
+|\lambda| \| \xi\| = \| A\xi\| \leq \| A\|\, \|\xi\|
+\]
+implies that $|\lambda| \leq \| A\|$. 
+\end{proof}
+
+\begin{Remark}
+Here is a formula which refines the above estimate. 
+\[
+r(A) = \lim_{n \to \infty} \| A^n\|^{1/n}. 
+\]  
+\end{Remark}
+
+As a slight generalization of matrix theory, we can work with 
+matrices indexed by a finite set $X$ as well: 
+a matrix is a family of numbers $A = (a_{xy})_{x, y \in X}$, 
+which operates on the inner product space $\ell^2(X)$ by 
+\[
+(A\xi)_x = \sum_{y \in X} a_{xy} \xi_y, 
+\quad 
+\xi = (\xi_x)_{x \in X} \in \ell^2(X).
+\]  
+
+If we define the hermitian conjugate $A^*$ of a square matrix 
+$A = (a_{jk})$ by $(A^*)_{jk} = \overline{a_{kj}}$, 
+it is characterized by the relation 
+\[
+(A^*\xi | \eta) = (\xi| A\eta)\quad
+\text{for $\xi, \eta \in \C^n$}.
+\]
+
+A matrix $A$ is \textbf{hermitian} if $A^* = A$. 
+A matrix $U$ is \textbf{unitary} if $UU^* = U^*U = I$, where 
+$I = (\delta_{j,k})$ denotes the unit matrix. 
+($I$ stands for identity.)
+
+A matrix $A$ is said to be \textbf{normal} if $AA^* = A^*A$. 
+The class of normal matrices includes
+hermitian and unitary matrices.
+
+\begin{Proposition}~ 
+  \begin{enumerate}
+  \item 
+For a hermitian matrix $A$, $\sigma(A) \subset \R$.
+\item 
+For a unitary matrix $U$, 
+$\sigma(U) \subset \{ z \in \C; |z| = 1\}$. 
+  \end{enumerate}
+\end{Proposition}
+
+\begin{Exercise}
+Determine the spectrum of a matrix $A$ 
+which is hermitian and unitary at the same time but not the unit 
+matrix. 
+\end{Exercise}
+
+\begin{Proposition}
+Let $A$ be a normal matrix. 
+\begin{enumerate}
+\item
+If $A\xi = \lambda \xi$ with $\xi \in \C^n$ and 
+$\lambda \in \C$, then 
+$A^*\xi = \overline{\lambda} \xi$.
+\item 
+If $A\xi = \lambda \xi$ and $A \eta = \mu \eta$ with 
+$\lambda \not= \mu$, then $(\xi|\eta) = 0$.  
+\end{enumerate}
+\end{Proposition}
+
+\begin{proof}
+(i) This follows from 
+\[
+(A^*\xi - \overline{\lambda}\xi| A^*\xi - \overline{\lambda}\xi) 
+= (A\xi - \lambda \xi | A\xi - \lambda \xi) = 0.
+\]
+
+(ii) is a consequence of 
+\[
+\lambda(\xi|\eta) = (A^*\xi|\eta) 
+= (\xi|A\eta) = \mu (\xi|\eta).
+\]
+\end{proof}
+
+\begin{Theorem}
+Let $\{ \lambda_1, \dots, \lambda_n \}$ 
+be the eigenvalue list (including multiplicity) of a normal matrix $A = (a_{ij})$. 
+Then we can find a unitary matrix $U$ satisfying 
+\[
+A = U^* 
+\begin{pmatrix}
+\lambda_1 & 0 & 0\\
+0 & \ddots & 0\\
+0 & 0 & \lambda_n
+\end{pmatrix}
+U.
+\]
+\end{Theorem}
+
+\begin{proof}
+Let $\xi_1$ be a normalized eigenvector of $A$ of eigenvalue $\lambda_1$. 
+By Gram-Schmidt's orthogonalization, we can find an orthonormal basis $(\xi_1,\dots,\xi_n)$ so that 
+\[
+(A\xi_1,\dots, A\xi_n) 
+% = 
+% (\xi_1,\dots, \xi_n) 
+% \begin{pmatrix}
+% \lambda_1 & * & \dots & *\\
+% 0 & * & \dots & *\\
+% \vdots & \vdots & \ddots & \vdots\\
+% 0 & * & \dots & *
+% \end{pmatrix}
+= (\xi_1,\dots,\xi_n) 
+\begin{pmatrix}
+\lambda_1 & *\\
+0 & B  
+\end{pmatrix}
+\]
+with $B$ a square matrix of size $n-1$. By repeating the same procedure to $B$, we arrive at 
+a unitary matrix 
+$U$ such that $UAU^*$ is upper triangular. Since an upper triangular 
+matrix is normal if and only if it is diagonal, we are done. 
+\end{proof}
+
+\begin{Corollary}
+For a normal matrix $A$, we have $\| A\| = r(A)$.
+\end{Corollary}
+
+\begin{Exercise}
+Investigate what we can say for the converse implication. 
+\end{Exercise}
+
+\begin{Exercise}
+Check that an upper triangular matrix is normal if and only if 
+it is diagonal. 
+\end{Exercise}
+
+Let $A$ be a hermitian matrix and set
+\begin{align*}
+\lambda_{max} &= \max \{ \lambda; \lambda \in \sigma(A) \},\\ 
+\lambda_{min} &= \min \{ \lambda; \lambda \in \sigma(A) \}.
+\end{align*}
+
+\begin{Proposition}
+We have the following expression. 
+\begin{align*}
+\lambda_{max} &= \max \{ (\xi|A\xi); \| \xi\| = 1\},\\
+\lambda_{min} &= \min \{ (\xi|A\xi); \| \xi\| = 1\}.
+\end{align*}
+\end{Proposition}
+
+\begin{proof}
+\[
+\lambda_{min}(|\xi_1|^2 + \dots + |\xi_n|^2) 
+\leq 
+\lambda_1 |\xi_1|^2 + \dots + \lambda_n |\xi_n|^2 
+\leq 
+\lambda_{max}(|\xi_1|^2 + \dots + |\xi_n|^2).
+\]
+\end{proof}
+
+\begin{Proposition}[Variational Principle]
+Let $A$ be a hermitian matrix. If a unit vector $\xi$ attains 
+the maximal value $\lambda_{max}$ of the function 
+$(\xi| A\xi)$, then 
+$A \xi = \lambda_{max} \xi$. 
+\end{Proposition}
+
+\begin{proof}
+Use the quadratic inequality 
+\[
+(\xi + t\eta |(\lambda_{max}I - A)(\xi + t \eta)) \geq 0
+\]
+for any $t \in \R$, together with the assumption 
+$(\xi|(\lambda_{max} I -A)\xi) = 0$. 
+\end{proof}
+
+\begin{Exercise}
+Compute $\lambda_{max}$ and $\lambda_{min}$ for the 
+real symmetric matrix 
+\[
+A = 
+\begin{pmatrix}
+a & b\\
+b & c
+\end{pmatrix}.
+\]
+\end{Exercise}
+
+% Given a matrix $A \in M_{m,n}(\C)$, its (hermite) symmetrization 
+% is the matrix $H \in M_{m+n}(\C)$ defined by 
+% \[
+% H = 
+% \begin{pmatrix}
+% 0 & A\\
+% A^* & 0
+% \end{pmatrix}.
+% \]
+
+% \begin{Lemma}
+% \[
+% \{ (\xi|H\xi); \| \xi\| = 1\} 
+% = \{ \Re (\xi|A\eta); \| \xi\| \leq 1, \|\eta\| \leq 1\}.
+% \]
+% \end{Lemma}
+
+% \begin{Corollary}
+% \[
+% \| H\| = \| A\|.
+% \]
+% \end{Corollary}
+
+For a future reference, we recall permutation matrices here.
+Given a permutation $\sigma \in S_n$ of degree $n$, 
+the associated \textbf{permutation matrix}  $P_\sigma$ is defined by 
+\[
+(P_\sigma)_{ij} = \delta_{i,\sigma(j)} = 
+\delta_{\sigma^{-1}(i),j}.
+\]
+The permutation matrix is orthogonal and satisfies 
+$P_\sigma P_\tau = P_{\sigma\tau}$ 
+for $\sigma, \tau \in S_n$. 
+
+\begin{Exercise}
+Check the multiplicativity property of permutation matrices. 
+\end{Exercise}
+
+\begin{Exercise}
+Compute the spectrum of permutation matrices. 
+\end{Exercise}
+
+\section{Graphs and Adjacency Matrices}
+
+%http://en.wikipedia.org/wiki/Seven_bridges_of_K%C3%B6nigsberg
+
+The Euler's solution to the seven bridges problem of K\"onigsberg 
+is considered to be a birth of the notion of graphs:
+A connected unoriented graph allows an Euler trail  
+if and only if the number of vertices of 
+odd degree is less than three 
+(the number of odd-degree vertices being always even 
+for unoriented graphs). 
+
+A \textbf{graph} is a quadruplet $(\Gamma,X, s, t)$, 
+where $\Gamma$ and $X$ are sets with 
+$s, t: \Gamma \to X$ maps. We call $\Gamma$ the set of 
+edges, $X$ the set of vertices, whereas 
+$s$ and $t$ are referred to as 
+the source and target maps respectively. 
+A graph is simply represented by the edge set when there arise 
+no confusions. 
+
+Given vertices $x$, $y \in X$, set 
+\begin{gather*}
+{}_x \Gamma = \{ \gamma \in \Gamma; t(\gamma) = x\}, 
+\quad 
+\Gamma_y = \{ \gamma \in \Gamma; s(\gamma) = y\},\\ 
+{}_x \Gamma_y = 
+\{ \gamma \in \Gamma; s(\gamma) = y, t(\gamma) = x \}.
+\end{gather*}
+
+A graph is \textbf{weakly finite} if ${}_x\Gamma_y$ is a finite set for 
+any ordered pair of elements $(x, y)$ in $ X$, 
+\textbf{locally finite} if both of ${}_x\Gamma$ and $\Gamma_x$ 
+are finite sets for any $x \in X$, and 
+\textbf{finite} if both of $\Gamma$ and $X$ are finite sets. 
+Given a weakly finite graph $\Gamma$, 
+its \textbf{adjacency matrix} is defined to be 
+$\{ |{}_x\Gamma_y|\}_{x, y \in X}$. 
+
+Two graphs $\Gamma$, $\Gamma'$ are said to be 
+\textbf{isomorphic} if 
+we can find bijections $\phi: \Gamma \to \Gamma'$ and 
+$\phi^{(0)}: X \to X'$ satisfying 
+\[
+t(\phi(\gamma)) = \phi^{(0)}(t(\gamma)), 
+\quad 
+s(\phi(\gamma)) = \phi^{(0)}(s(\gamma))
+\]
+for any $\gamma \in \Gamma$. 
+
+A graph $\Gamma$ is a \textbf{subgraph} of a graph $\Gamma'$ if 
+$\Gamma \subset \Gamma'$, $X \subset X'$,
+$s = s'|_{\Gamma}$ and $t = t'|_{\Gamma}$. 
+By abuse of terminology, a graph isomorphic to 
+a subgraph is also referred to as a subgraph. 
+
+\begin{Example}
+Cyclic permutations and circle graphs.
+\end{Example}
+
+By an involution of a graph $\Gamma$, we shall mean 
+a bijection $\Gamma \ni \gamma \mapsto \gamma^{-1} \in \Gamma$ 
+such that $t(\gamma^{-1}) = s(\gamma)$ and 
+$(\gamma^{-1} )^{-1} = \gamma$. 
+An \textbf{unoriented graph} is, by definition, a graph $\Gamma$ 
+which is furnished 
+with an involution satisfying 
+$\gamma^{-1} = \gamma$ for $\gamma \in \Gamma$ satisfying $s(\gamma) = t(\gamma)$. 
+% $\gamma^{-1} \not= \gamma$ for any $\gamma \in \Gamma$. 
+% An unoriented graph is a $\Z_2$- set in an obvious way. 
+
+% For an unoriented graph, we modify the definition of 
+% adjacency matrix at diagonal components:
+% $|{}_x\Gamma_x|/2$. 
+
+Two square matrices are said to be \textbf{equivalent} if 
+we can find a permutation matrix $P$ such that 
+$P A P^{-1} = B$. 
+
+\begin{Proposition}
+There is a one-to-one correspondance between 
+isopmorphism classes of finite graphs and 
+equivalence classes of $\N$-valued square matrices. 
+
+There is a one-to-one correspodance between 
+isomorphism classes of finite unoriented graphs 
+and equivalence classes of $\N$-valued symmetric matrices. 
+\end{Proposition}
+
+Let $G$ be a (at most) countable group with $1 \not\in S$ a set of generators.
+Then the associated \textbf{Cayley graph} $\Gamma(G,S)$ is 
+defined by $X = G$ and $\Gamma = \{ (g,ga); g \in G, a \in S \}$ 
+with $t(g,ga) = g$ and $s(g,ga) = ga$. 
+
+If the generator set $S$ further satisfies $S^{-1} = S$, i.e., $a \in S$ if ans only if $a^{-1} \in S$, 
+then $\Gamma(G,S)$ is unoriented with respect to the involution
+$(g,ga)^{-1} = (ga,g)$. 
+
+For the cyclic group $C_n$ with $a$ a generator, 
+$\Gamma(C_n,\{ a\})$ is an oriented $n$-gon and 
+$\Gamma(C_n, \{ a, a^{-1} \})$ an $n$-gon. 
+
+\begin{Exercise}
+Depict the oriented graph $\Gamma(\Z, \{ 1\})$ and the unoriented graph 
+$\Gamma(\Z,\{ \pm 1\})$. 
+\end{Exercise}
+
+\begin{Exercise}
+Depict the graph $\Gamma(F_2, \{ a^{\pm 1}, b^{\pm 1} \})$.   
+\end{Exercise}
+
+Given a finite graph $\Gamma$ with $A$ the incidence matrix, 
+we define a linear operator $A: \ell^2(X) \to \ell^2(X)$ by 
+\[
+A \delta_x = \sum_{y \in X} A_{y,x} \delta_y. 
+\]
+By the \textbf{norm} $\| \Gamma\|$ of $\Gamma$, we shall mean 
+the one for the linear operator $A$ and 
+the \textbf{spectrum} $\sigma(\Gamma)$ of $\Gamma$ is, by definition, the spectrum of $A$. 
+
+\begin{Example}~ 
+\begin{enumerate}
+\item
+The spectrum of cyclic permutations (oriented circle graphs). 
+\[
+\sigma(\Gamma) = \{ e^{2\pi ik/n}; 0 \leq k \leq n-1\}.
+\]
+\item
+The spectrum of unoriented circle graphs. 
+\[
+\sigma(\Gamma) = \{ 2\cos(2\pi k/n); 0 \leq k \leq n-1\}.
+\]
+\item 
+The spectrum and the norm of oriented lines (Jordan blocks).
+\item 
+The spectrum of unoriented lines.
+\[
+\sigma(\Gamma) = \{ 2\cos(\pi k/(n+1)); 1 \leq k \leq n\}.
+\]
+% \item 
+% Oriented unilateral lines (unilateral shift and its adjoint). 
+% \item 
+% The unoriented unilateral line.
+% \item 
+% The oriented bilateral line.
+% \item 
+% The unoriented bilateral line. 
+\end{enumerate}
+\end{Example}
+
+\begin{Exercise}
+Check the case (i) and (iii).
+\end{Exercise}
+
+\begin{Exercise}
+Compute the spectrum of the complete graph $K_n$ of $n$ vertices. 
+\end{Exercise}
+
+For the spectral analysis of $\Gamma(F_2,\{a^{\pm 1}, b^{\pm 1})$, 
+we need some machinery of free probability theory. 
+
+A \textbf{path} in a graph is a finite sequence 
+$\gamma = \{ \gamma_1, \gamma_2, \dots, \gamma_n\}$ 
+of edges satisfying 
+\[
+s(\gamma_j) = t(\gamma_{j+1}) 
+\quad
+\text{for $1 \leq j \leq n-1$.}
+\]
+The number $n$ is called the length of the path. 
+We set $s(\gamma) = s(\gamma_n)$ and $t(\gamma) = t(\gamma_1)$. 
+
+A graph is \textbf{connected} if, given two vertices $x$, $y$, 
+we can find a path $\gamma$ such that $x = t(\gamma)$ and 
+$y= s(\gamma)$.    
+
+\begin{Remark}
+Notice that a graph consisting of one vertex is connected 
+if and only if the edge set is non-empty. 
+\end{Remark}
+
+\begin{Exercise}
+Compute the spectrum and the norm for connected unoriented graphs 
+of radial shape. 
+\end{Exercise}
+
+In what follows, we shall exclusively deal with unoriented graphs
+and the adjective `unoriented' will be omitted 
+unless otherwise stated. 
+
+
+
+\section{Perron-Frobenius Theorems}
+We shall describe basic results in Perron-Frobenius Theory. 
+To make the access easier, we restrict ourselves to the case of 
+symmetric matrices. 
+
+A symmetric matrix $A = (a_{ij})$ is said to be \textbf{non-negative} if 
+$a_{ij}=a_{ji} \geq 0$ for all $i,j$.  
+A non-negative symmetric matrix $A$ is said to be reducible if we can find 
+a permutation matrix $P$ such that 
+\[
+PAP^{-1} = 
+\begin{pmatrix}
+* & 0\\
+0 & *
+\end{pmatrix}
+\]
+in a non-trivial manner, i.e., there is a finite non-empty 
+proper subset $X$ of $\Gamma^{(0)}$ such that 
+$(PAP^{-1})_{xy} = (PAP^{-1})_{yx} = 0$ for 
+$x \in X$ and $y \not\in X$. 
+Otherwise, we call it an \textbf{irreducible} matrix.
+
+\begin{Proposition}
+The following conditions for a symmetric matrix $A$ of non-negative 
+entries are equivalent.
+\begin{enumerate}
+\item 
+The matrix $A$ is irreducible.
+\item 
+For any $1 \leq i, j \leq n$, we can find an integer $k \geq 1$ such that 
+$(A^k)_{ij} > 0$. 
+\item 
+Let $\Gamma$ be the graph associated to the symmetric matrix 
+whose $(i,j)$-th component is set to be either $1$ or $0$ according to 
+$A_{ij} > 0$ or $a_{ij} = 0$. Then $\Gamma$ is connected. 
+\end{enumerate}
+\end{Proposition}
+
+\begin{Exercise}
+Check the reducibility of the matrix
+\[
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 1 & 0\\
+0 & 1 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0\\
+0 & 1 & 0 & 0 & 0 & 0\\
+1 & 0 & 1 & 0 & 0 & 1\\
+0 & 0 & 0 & 0 & 1 & 0
+\end{pmatrix}.
+\]
+\end{Exercise}
+
+\begin{Exercise}
+Interpret the condition $(A^k)_{ij} > 0$ graphically.   
+\end{Exercise}
+
+\begin{Definition}
+For a matrix $A$ of non-negative entries, an eigenvector 
+of eigenvalue $r(A)$ (the spectral radius of $A$) 
+with  non-negative components 
+is called a \textbf{Perron eigenvector}. 
+Note that $r(A) = \| A\|$ for a symmetric $A$. 
+\end{Definition}
+
+\begin{Theorem}
+Any symmetric matrix $A$ of non-negative entries admits 
+a Perron eigenvector: we can find a vector $\eta \not= 0$ satisfying 
+$\eta_j \geq 0$ and $A\eta = \| A\| \eta$. 
+\end{Theorem}
+
+\begin{proof}
+Since $A$ is hermitian, we can find a unit eigenvector 
+$\xi$ of eigenvalue $\lambda$ such that $|\lambda| = \| A\|$. 
+Let the unit vector $\eta = (\eta_j)$ 
+be defined by $\eta_j = |\xi_j|$. Then 
+\[
+\| A\| = |\lambda| = |(\xi|A\xi)| \leq (\eta|A\eta) 
+\leq \lambda_{max} \leq \| A\|
+\]
+implies $\lambda_{max} = \| A \|$ and 
+$\lambda_{max} = (\eta|A\eta)$. By the variational principle, 
+$\eta$ is a Perron eigenvector of $A$. 
+\end{proof}
+
+\begin{Theorem}
+Let $A$ be an irreducible symmetric matrix of non-negative 
+entries. 
+\begin{enumerate}
+\item 
+Perron eigenvector is unique 
+up to scalar multiplication and all of its components are 
+strictly positive. 
+\item 
+Any eigenvector of maximal modulus eigenvalue is proportional to 
+a Perron eigenvector. 
+\item 
+Any eigenvector of $A$ with non-negative components is a Perron 
+eigenvector. 
+  \end{enumerate}
+\end{Theorem}
+
+\begin{proof}
+(i) Let $\eta = (\eta_1,\dots,\eta_n)$ be a Perron eigenvector 
+and assume that $\eta_i>0$ for some $i$. Since $A$ is irreducible, 
+we can find $N$ such that $(A^N)_{ji} > 0$ for any $j$ and then 
+\[
+\| A\|^N \eta_j = (A^N \eta)_j = \sum_k (A^N)_{jk} \eta_k 
+\geq (A^N)_{ji} \eta_i > 0.
+\]
+
+(ii) If there exists an eigenvector which is not proportional 
+to a given Perron eigenvector, we can find a eigenvector $\xi$ 
+admitting a zero component. 
+Then, by the proof of the previous theorem, $|\xi|$ is a Perron 
+eigenvector, which contradicts with the strict positivity 
+of components of Perron eigenvectors. 
+
+(iii) Let $\xi$ be an eigenvector of 
+$A$ with non-negative components. If its eigenvalue is different 
+from $\| A\|$, then it is orthogonal to a Perron eigenvector. 
+Again, by the strict positivity of Perron eigenvector, 
+this is impossible. 
+\end{proof}
+
+\begin{Exercise}
+Compute the Perron eigenvector of the matrix 
+\[
+\begin{pmatrix}
+e^a & e^b\\
+e^b & e^{-a}
+\end{pmatrix}
+\]
+for $a, b \in \R$. 
+\end{Exercise}
+
+\begin{Exercise}
+Investigate the validity of uniquness in the case of reducible matrices.
+\end{Exercise}
+
+The following simple observation is a key in the classification of 
+connected graphs of smaller norm. 
+
+\begin{Lemma}
+Let $A$ and $B$ be symmetric matrices of non-negative entries 
+such that $a_{ij} \leq b_{ij}$ for any $i,j$. Then 
+$\| A\| \leq \| B \|$.
+
+Furthermore, if $B$ is irreducible and $A \not= B$, 
+the strict inequality $\| A \| < \| B\|$ holds. 
+\end{Lemma}
+
+\begin{proof}
+Let $\xi$ be a normalized Perron eigenvector of $A$. 
+Then we have 
+\[
+\| A \| = \| A\| (\xi|\xi) 
+= (\xi|A\xi) \leq (\xi|B\xi) \leq \| B\| \|\xi\|^2 = \| B\|.
+\]
+If we assume $\| A \| = \| B\|$ in addition, 
+then $(\xi|B\xi) = \| B\|$ and the variational principle 
+implies that $\xi$ is a Perron eigenvector of $B$ as well. 
+
+Now, from the irreducibility assumption of $B$, $\xi_j >0 $ 
+for any $j$, which together with the relation 
+$(B-A)\xi = \| B \| \xi - \| A \| \xi = 0$ shows that 
+$B - A$ admits no positive entries, i.e., $B - A = 0$.
+\end{proof}
+
+\begin{Corollary}
+Let $\Gamma'$ be a finite connected graph and 
+$\Gamma$ be a proper subgrapah of $\Gamma'$. Then 
+$\| \Gamma \| < \| \Gamma' \|$. 
+\end{Corollary}
+
+\begin{Remark}
+The Perron-Frobenius theorems are 
+originally formulated for non-symmetric matrices, which correspond to 
+adjacency matrices of oriented graphs. 
+The norm-increasing principle then turns out to be 
+applicable to oriented graphs as well. 
+As another application, we remark here 
+the asymptotic analysis of stochastic matrices and 
+the google pagerank in evaluating websites. 
+\end{Remark}
+
+
+\section{Graphs of type A and D}
+The graph $A_l$ ($l \geq 2$) is a linear graph of $l$ vertices. 
+Number the vertices from one terminal sequencially and 
+let $(c_1,c_2, \dots, c_l)$ be an eigenvector of eigenvalue 
+$\lambda$. Then the eigenequation is of the form 
+\begin{align*}
+\lambda c_1 &= c_2,\\ 
+\lambda c_j &= c_{j-1} + c_{j+1} 
+\quad\text{for $2 \leq j \leq l-1$},\\
+\lambda c_l &= c_{l-1}.
+\end{align*}
+If we introduce monic polynomials $\{ P_n(\lambda)\}_{n \geq 0}$ 
+by 
+\[
+\lambda P_n(\lambda) = P_{n-1}(\lambda) + P_{n+1}(\lambda), 
+\quad 
+P_0(\lambda) = 1, P_1(\lambda) = \lambda, 
+\]
+then the eigenequation is reduced to the signle equation 
+$c_{l+1} = c_1 P_l(\lambda) = 0$, i.e., 
+$\det(\lambda I - A_l) = P_l(\lambda)$. 
+\[
+P_2 = \lambda^2 -1, 
+P_3 = \lambda^3 - 2\lambda, 
+P_4 = \lambda^4 - 3\lambda^2 + 1, 
+P_5 = \lambda^5 - 4\lambda^3 + 3\lambda.
+\]
+Returning to the original eigenequation, 
+the generic part of the recursive relation is solved 
+in terms of the characteristic roots $q, q^{-1}$ of the quadratic 
+equation $t^2+1 = \lambda t$ satisfying 
+$\lambda = q + q^{-1}$: 
+$c_k = \alpha q^k + \beta q^{-k}$ ($1 \leq k \leq l$). 
+
+If we take the initial condition $(q+q^{-1})c_1 = c_2$ into 
+account, $\alpha + \beta = 0$ and we can set 
+\[
+c_k = \frac{q^k - q^{-k}}{q - q^{-1}} \equiv [k]_q
+\]
+up to multiplicative constant. 
+
+Finally, the terminal matching $(q+q^{-1})c_l = c_{l-1}$ is 
+satisfied if and only if $[l+1]_q = 0$. 
+By the exchange symmetry between 
+$q$ and $q^{-1}$, we may take 
+$q = e^{\pi ki/(l+1)}$ ($1 \leq k \leq l$) 
+with the associated eigenvalues given by 
+$q + q^{-1} = 2\cos(k\pi/(l+1))$ ($1 \leq k \leq l$), i.e., 
+\[
+P_l(\lambda) = \prod_{k=1}^l 
+\left( 
+\lambda - 2 \cos \frac{k\pi}{l+1} \right). 
+\]
+The Perron eigenvector is obtained for the choice 
+$q^{\pi i/(l+1)}$ with 
+\[
+\| A_l \| = q + q^{-1} = 2\cos \left( \frac{\pi}{l+1} \right), 
+\quad 
+c_k = \frac{\sin(k\pi/(l+1))}{\sin(\pi/(l+1))}.  
+\] 
+
+\hspace{2cm}
+\input 
+oa2006-1.tpc
+
+\bigskip
+\begin{Remark}~ 
+\begin{enumerate}
+\item
+The expression $[n]_q$ is referred to as $q$-integer, which 
+is known to be a source of many interesting identities. 
+Here $q$ can be considered to be 
+a kind of deformation parameter with the ordinary integal relations 
+recovered by taking the limit $q \to 1$. 
+\item
+The polynomial $P_n(\lambda)$ is also referred to as the Chebyshev 
+polynomial of second kind: 
+\[
+% P_n(2\cos \theta) = \frac{\sin (n+1)\theta}{\sin \theta},
+P_n(q+q^{-1}) = \frac{q^{n+1} - q^{-n-1}}{q - q^{-1}}
+\quad \text{with} \ 
+q = e^{i\theta}.
+\]
+\end{enumerate}
+\end{Remark}
+
+Consider the graph $D_l$ ($l \geq 4$), which is a graph 
+with one edge and one vertex added to the graph $A_{l-1}$ in a 
+minimal way. 
+Let $(a,b,c[n]_q, c[n-1]_q, \dots, c[2]_q, c[1]_q)$ be 
+an eigenvector of eigenvalue $q+q^{-1}$ ($l = n+2$). 
+The choice of components 
+automatically solves the most of eigenequation with 
+the remaining part given by 
+\[
+(q+q^{-1}) a = (q+q^{-1}) b = c[n]_q, 
+\quad 
+(q+q^{-1}) c[n]_q = a + b + c[n-1]_q,
+\]
+which is solved by the equation 
+\[
+(q^2 + 1)(q^{2l-2} + 1) =0
+\]
+with eigenvectors specified by 
+\[
+a = b = \frac{[n]_q}{[2]_q}c 
+\]
+for $q^{2l-2} + 1 = 0$ and 
+\[
+a + b = 0 = c
+\]
+for $q^2 + 1 = 0$. 
+Here is a list for $q = e^{i\theta}$ with $\theta$
+\[
+\frac{1}{2l-2} \pi,\quad  
+\frac{3}{2l-2} \pi,\quad \dots\ ,\quad  
+\frac{2l-5}{2l-2} \pi,\quad 
+\frac{2l-3}{2l-2} \pi.
+\]
+Note that the eigenvalue $\lambda = 0$ has multiplicity $2$ 
+for an even $l$. 
+\[
+( \lambda I - D_l) = \lambda \prod_{k=1}^{l-1} 
+\Bigl(
+\lambda - 2\cos \left( \frac{2k-1}{2l-2} \pi \right)  
+\Bigr).
+\]
+The Perron eigenvector is obtained if we choose 
+$q = e^{\pi i/2(n+1)}$, which particularly implies  
+\[
+\| D_l \| = 2\cos \left( \frac{\pi}{2l-2} \right).
+\]
+
+\hspace{2cm}
+\input oa2006-2.tpc
+
+\bigskip
+As a final series of graphs, consider a graph $T_l$, 
+which is the graph obtained from $A_l$ by adding one loop-edge 
+at a terminal vertex. 
+Let $([1]_q,[2]_q,\dots, [l]_q)$ be a Perron eigenvector. 
+Then the matching condition arises from the loop-vertex: 
+\[
+(q+q^{-1})[l]_q = [l]_q + [l-1]_q.
+\]
+In terms of the expression 
+\[
+[n]_q = q^{n-1} + q^{n-3} + \dots + q^{-n+3} + q^{-n+1}, 
+\]
+we see that the above condition is equivalent to 
+\[
+0 = q^l - q^{l-1} + q^{l-2} + \dots + q^{-l} 
+= q^{-l} \frac{1 - (-q)^{2l+1}}{1-(-q)},
+\]
+which has the solution (up to taking inverse in $q$) 
+\[
+\frac{1}{2l+1} \pi,\quad  
+\frac{3}{2l+1} \pi,\quad \dots\ ,\quad  
+\frac{2l-3}{2l+1} \pi,\quad 
+\frac{2l-1}{2l+1} \pi,
+\]
+i.e., 
+\[
+\det(\lambda I - T_l) = \prod_{k=1}^l 
+\Bigl(
+\lambda - 2\cos \left( \frac{2k-1}{2l+1} \pi \right)  
+\Bigr).
+\]
+As a result, we know that $q = e^{\pi i/(2l+1)}$ for 
+the choice of Perron eigenvector and the graph norm is computed 
+by 
+\[
+\| T_l\| = 2 \cos \left( \frac{\pi}{2l+1} \right).
+\]
+
+\hspace{2cm}
+\input oa2006-3.tpc
+
+\begin{Exercise}
+Investigate the Perron eigenvalue of the following graph $K_n$. 
+Show that 
+$\lim_{n \to \infty} \| K_n\| = \frac{5}{2}$. 
+\end{Exercise}
+
+\hspace{2cm}
+\input oa2006-18.tpc
+
+
+\section{Graphs of Norm 2}
+
+We shall describe most of the graphs of norm $2$. 
+By adding one edge and one vertex to the graph of type A or D, 
+there are series of graphs of norm $2$. 
+
+\begin{Example}
+Let ${\widetilde A}_l$ ($l \geq 2$) 
+be the loop graph of $l+1$ vertices.
+
+It is immediate to see that the Perron eigenvector is 
+$(1,1,\dots, 1)$ with an eigenvalue of $2$.
+\end{Example}
+
+\hspace{3cm}
+\input oa2006-4.tpc
+
+\begin{Exercise}
+Compute the eigenpolynomial $\det(\lambda I - {\widetilde A}_l)$; 
+use the relation ${\widetilde A}_l = C + C^*$ with $C$ a cyclic 
+permutation. 
+\end{Exercise}
+
+\begin{Example}
+Let ${\widetilde D}_l$ ($l \geq 4$) be 
+the I-shaped graph of $l+1$ vertices. 
+Then 
+the Perron eigenvector is 
+$(1,1,1,1,2, 2, \dots,2)$ with an eigenvalue of $2$.
+\end{Example}
+
+\hspace{2cm}
+\input oa2006-5.tpc
+
+\bigskip
+% \begin{Example}
+% The graphs ${\widetilde E}_l$ ($l=6,7,8$) below are of norm $2$
+% with the indicated Perron eigenvectors.
+% \end{Example}
+
+By adding of one or two loop-edges to the graph of type A or D, 
+we obtain the following. 
+
+\begin{Example}
+The extended tadpole graph ${\widetilde T}_l$ ($l \geq 2$) of 
+$l+1$ vertices. 
+\end{Example}
+
+\hspace{2cm}
+\input oa2006-6.tpc
+
+\begin{Example}
+The double tadpole graph ${\widehat T}_l$ ($l \geq 1$) of 
+$l$ vertices. 
+\end{Example}
+
+\hspace{2cm}
+\input oa2006-7.tpc
+
+\begin{Exercise}
+Compute the Perron eigenvalue of the graph obtained 
+by adding one loop edge to each vertex of ${\widetilde A}_l$. 
+\end{Exercise}
+
+If we allow infinite graphs, 
+there are three more graphs of norm $2$, 
+which are limits of graphs of type A, D and T.
+
+%Locally finite graphs and their graph norms. 
+
+An infinite matrix $A = (a_{ij})$ is defined to be 
+\textbf{locally finite} if 
+\[
+\{ i; a_{i,j} \not=0 \}
+\quad
+\text{and}
+\quad 
+\{ i; a_{j,i} \not= 0 \}
+\]
+are finite sets for any $j$. 
+A vector of infinitely many components $\xi = \{ \xi_j\}$ is 
+said to be essentially finite if we can find a finite subset $F$ 
+such that $\xi_j = 0$ unless $j \in F$. 
+
+An essentially finite vector is multiplied 
+by a locally finite matrix, which is denoted by $A\xi$. 
+
+A graph is locally finite if and only if the associated matrix is locally 
+finite. 
+The norm of a locally finite graph is defined exactly 
+as in the case of finite graphs.  
+
+
+\begin{Lemma}
+For a locally finite matrix $A$, 
+its norm is a limit of those for finite submatrices. 
+More precisely, given a finite subset $F$ of indices, let 
+$A_F$ be the finite matrix with index set restricted to $F$. 
+Then we have 
+\[
+\| A\| = \lim_{F \to \Gamma^{(0)}} \| A_F\|.
+\]
+\end{Lemma}
+
+\begin{Corollary}
+For locally finite graphs, $\Gamma \subset \Gamma'$ implies 
+$\| \Gamma\| \leq \| \Gamma'\|$. 
+\end{Corollary}
+
+\begin{Theorem}
+Any connected locally finite infinite graph $\Gamma$ contains 
+the graph $A_\infty$ as a subgraph and hence 
+$\| \Gamma \| \geq 2$. 
+The equality holds if and only if $\Gamma$ is one of 
+$A_\infty$ (unilateral line), 
+${\widetilde A}_\infty$ (bilateral line), 
+$D_\infty$ or $T_\infty$. 
+\end{Theorem}
+
+For the proof of `only if' part, we need the result for T-shaped 
+graphs, which will be checked in the next section. 
+
+\hspace{2.3cm}
+\input oa2006-8.tpc
+
+\bigskip
+\hspace{1cm}
+\input oa2006-9.tpc
+
+\bigskip
+\hspace{1.5cm}
+\input oa2006-10.tpc
+
+\section{Graphs of type E}
+Let $T_{p,q,r}$ with $1 \leq p \leq q \leq r$ be 
+the T-shaped graphs with lines of length 
+$p$, $q$ and $r$ respectively ($T_{p,q,r}$ has $p+q+r$ edges). 
+Since $T_{1,1,n} = D_{n+3}$, we focus on 
+the other case. 
+
+\hspace{2cm}
+\input oa2006-11.tpc
+
+\begin{Exercise}
+Check the fact that $T_{p,q,r} \subset T_{p',q',r'}$ if and only 
+if $p \leq p'$, $q \leq q'$ and $r \leq r'$. 
+\end{Exercise}
+
+We first seek for the graph of norm 2 among $T_{1,2,n-1}$'s. 
+Let $(a,b_1,b_2,c_k)$ be a Perron vector. As in the case of type 
+A and D, we can set $c_k = k$ ($1 \leq k \leq n$) for 
+the longer line part. The eigenequation then takes the form 
+\[
+2a = n, \quad 
+2b_1 = b_2, \quad 2b_2 = b_1 + n, \quad 
+2n = a + b_2 + n-1, 
+\]
+which has the solution
+\[
+n =6, a = 3, b_1 = 2, b_2 = 4.
+\]
+
+Next we see for the graph of norm 2 among $T_{1,3,n-1}$. 
+For the Perron eigenvector $(a, b, 2b, 3b, c_k=k)$, we have 
+the equation 
+\[
+2a = n, \quad 
+6b = 2b + n, \quad 
+2n = a + 3b + n-1
+\]
+with the solution 
+\[
+n = 4, a = 2, b = 1.
+\]
+
+Similarly, the Perron eigenvector 
+$(a, 2a, b, 2b, c_k = k)$ for $T_{2,2,n-1}$ admits 
+an eigenvalue $2$ if and only if 
+\[
+n=3, a = b = 1.
+\]
+
+It is conventional to denote these graphs by 
+${\widetilde E}_6 = T_{2,2,2}$, ${\widetilde E}_7 = T_{1,3,3}$
+and ${\widetilde E}_8 = T_{1,2,5}$. 
+
+\hspace{3cm}
+\input oa2006-12.tpc
+
+\bigskip
+\hspace{2cm}
+\input oa2006-13.tpc
+
+\bigskip
+\hspace{1.5cm}
+\input oa2006-14.tpc
+
+\begin{Theorem}
+The graph $T_{p,q,r}$ has a norm $\leq 2$ if and only if 
+$(p,q,r)$ is in the following list.
+\begin{enumerate}
+\item 
+\[
+(p,q,r) = (1,2,5), (1,3,3), (2,2,2).
+\]
+\item 
+\[
+(p,q,r) = (1,1,r\geq 1), (1,2,2), (1,2,3), (1,2,4). 
+\]
+\end{enumerate}
+Write 
+% $D_l = T_{1,1,l-3}$ ($l \geq 4$), 
+$E_6 = T_{1,2,2}$, $E_7 = T_{1,2,3}$, $E_8 = T_{1,2,4}$.
+\end{Theorem}
+
+\begin{proof}
+The list in (i) has a norm of 2 as observed already and hence 
+$T_{p,q,r}$ with $(p,q,r)> (2,2,2)$ 
+or $(p,q,r) > (1,3,3)$ or 
+$(p,q,r) > (1,2,5)$ (in the inclusion ordering)
+has a norm $> 2$. 
+The remaining is in the list (ii). The graph $E_l$ ($l=6,7,8$) 
+has a norm smaller than $2$ as a subgraph of 
+${\widetilde E}_l$. The graph $D_l$ has a norm of 
+$2 \cos (\pi/(2l-2))$. 
+\end{proof}
+
+Consider $T_{1,2,n-1}$ and let 
+$(a, b_1, b_2, c_k)$ be a Perron eigenvector with 
+$c_k = (q^k - q^{-k})/(q-q^{-1})$ for $1 \leq k \leq n$ and 
+an eigenvalue $q + q^{-1}$. 
+This choice solves the eigenequation for the longest line. 
+The remaining equations are 
+\begin{align*}
+(q+q^{-1}) a' &= q^n - q^{-n},\\
+(q+q^{-1}) b_1' &= b_2',\\
+(q+q^{-1}) b_2' &= b_1' + q^n - q^{-n},\\
+(q+q^{-1}) (q^n - q^{-n}) &= a' + b_2' + q^{n-1} - q^{-n+1}
+\end{align*}
+with $a' = (q - q^{-1})a$ and $b_j' = (q - q^{-1})b_j$. 
+Under the condition that $1 < q+q^{-1} < 2$, this is equivalent to requiring
+\[
+(q^5 - q^{-5}) (q^n - q^{-n}) 
+= (q+q^{-1})(q^3-q^{-3}) (q^{n-1} - q^{-n+1})
+\]
+together with 
+\[
+a' = \frac{q^n-q^{-n}}{q+q^{-1}}, 
+\quad
+b_1' = \frac{q^n-q^{-n}}{q^2+q^{-2}+1}, 
+\quad
+b_2' = (q+q^{-1}) b_1.
+\]
+
+We shall write down explicitly for $n=3,4,5$ 
+(note $q-q^{-1} \not= 0$). 
+
+$n=3$:
+\[
+q^8 - q^4 + 1 = \frac{q^{12} +1}{q^4+1} = 0.
+\]
+
+$n=4$: 
+\[
+q^{12} - q^6 + 1 = \frac{q^{18}+1}{q^6+1} = 0.
+\]
+
+$n=5$: 
+\[
+q^{16} + q^{14} - q^{10} - q^8 - q^6 + q^2 + 1 = 0.
+\]
+
+For $n=3$ or $n=4$, we see that 
+the choice $q= e^{i\pi/12}$ or $q = e^{i \pi/18}$ gives 
+positive components of Perron eigenvector, which particularly 
+shows $\| E_6 \| = 2 \cos(\pi/12)$ and 
+$\| E_7 \| = 2 \cos(\pi/18)$. 
+
+For the case $n=5$, we may expect a similar conclusion: 
+the last equation is a cyclotomic polynomial of $q^2$. 
+Since 
+\[
+\phi(2^a 3^b 5^c 7^d \cdots) = 
+\phi(2^a) \phi(3^b) \phi(5^c) \phi(7^d) \dots 
+= 2^{a-1} \cdot 2 3^{b-1} \cdot 4 5^{c-1} \cdot 6 7^{d-1} \cdots, 
+\]
+the cyclotomic polynomial of degree $8$ is for $2^4 = 16$, 
+$2^3 3 = 24$ or $2\cdot 3\cdot 5 = 30$. 
+By an explicit computation 
+based on the exclusion-inclusion principle, 
+\begin{align*}
+\Phi_{16}(t) &= \frac{t^{16} -1}{t^8 - 1} = t^8 + 1,\\
+\Phi_{24}(t) &= \frac{(t^{24}-1)(t^4-1)}{(t^{12}-1)(t^8-1)} 
+= t^8 - t^4 + 1,\\
+\Phi_{30}(t) &= \frac{(t^{30}-1) (t^5-1) (t^3-1)(t^2-1)} 
+{(t^{15}-1) (t^{10}-1) (t^6-1) (t-1)} 
+= t^8 + t^7 - t^5 - t^4 - t^3 + t + 1.
+\end{align*}
+Comparing this with the equation for $q$, we conclude that 
+$q^2$ is a $30$-th primitive root of unity. 
+In fact, for the choice $q = e^{i\pi/30}$, all the components 
+of the relevant eigenvector is positive. 
+Thus $\| E_8\| = 2 \cos (\pi/30)$. 
+
+\bigskip
+\hspace{3cm}
+\input oa2006-15.tpc
+
+\bigskip
+\hspace{3cm}
+\input oa2006-16.tpc
+
+
+\bigskip
+\hspace{3cm}
+\input oa2006-17.tpc
+
+\begin{Exercise}
+Investigate the Perron eigenvalue of the graph $T_{n,n,n}$ and 
+show that 
+\[
+\lim_{n \to \infty} \| T_{n,n,n} \| = \frac{3}{\sqrt{2}}.
+\]
+\end{Exercise}
+
+\begin{Exercise}
+Show that $\| T_{p,q,r} \| < \frac{3}{\sqrt{2}}$. 
+\end{Exercise}
+
+
+\section{Classification of Connected Graphs of Smaller Norm}
+\begin{Theorem}
+Finite connected graphs of norm $2$ are 
+exactly one of the followings.
+\begin{enumerate}
+\item 
+${\widetilde A}_l$ ($l \geq 1$).
+\item 
+${\widetilde D}_l$ ($l \geq 3$). 
+\item 
+${\widetilde T}_l$ ($l \geq 2$).
+\item
+${\widehat T}_l$ ($l \geq 1$). 
+\item 
+${\widetilde E}_l$ ($l=6,7,8$). 
+\end{enumerate}
+\end{Theorem}
+
+\begin{Theorem}
+Any connected graph of norm smaller than $2$ is contained 
+in a connected graph of norm $2$ and isomorphic to 
+one of the following graphs. 
+\begin{enumerate}
+\item 
+$A_l$ ($l \geq 2$).
+\item 
+$D_l$ ($l \geq 3$).
+\item 
+$T_l$ ($l \geq 1$). 
+\item 
+$E_l$ ($l=6,7,8$). 
+\end{enumerate}
+\end{Theorem}
+
+Let $\| \Gamma \| \leq 2$. 
+Since $\| {\widehat T}_l \| = 2$ for $l \geq 1$, 
+if $\Gamma$ contains two or more loop edges, 
+it must be ${\widehat T}_l$. 
+Since $\| {\widetilde T}_l \| = 2$ for $2 \geq 1$, 
+if $\Gamma$ contains a triple vertex and a loop edge 
+together, it should be ${\widetilde T}_l$. 
+
+So assume now that $\Gamma$ contains no loop edges. 
+Since $\| {\widetilde A}_l \| = 2$, $\Gamma$ should not contain 
+a proper closed circuit; $\Gamma$ is ${\widetilde A}_l$ or a tree. 
+Since $\| {\widetilde D}_3 \| = 2$, 
+$\Gamma$ does not contain a quadruple vertice properly; 
+$\Gamma = {\widetilde D}_3$ or $\Gamma$ contains no quadruple 
+vertices. 
+
+Since $\| {\widetilde D}_l \| =2$ for $l \geq 4$, 
+$\Gamma = {\widetilde D}_l$ or $\Gamma = T_{p,q,r}$ 
+if $\Gamma$ contains a triple vertex. 
+If there is no triple vertex, $\Gamma = A_l$ has norm less 
+than $2$. 
+
+From $\| T_{2,2,2} \| = 2$, we see $\| T_{2,q,r} \| > 2$ 
+for $(2,q,r) > (2,2,2)$ and are reduced to the case 
+$T_{1,q,r}$. Again $\| T_{1,3,3} \| = 2$ shows that 
+$\| T_{1,q,r} \| > 2$ for $(1,q,r) > (1,3,3)$. 
+
+Since $\| T_{1,2,5} \| = 2$, we see 
+$\| T_{1,2, r} \| > 2$ for $r \geq 6$. 
+
+Finally $\| T_{1,1,r} \| = 2\cos (\pi/2(r+2)) < 2$ for 
+$r \geq 1$. 
+
+\begin{Exercise}
+Supply the proof Theorem~5.7. 
+\end{Exercise}
+
+\begin{Exercise}
+Investigate the norm of $T_{1,n,n}$ and show that 
+$\lim_{n \to \infty} \| T_{1,n,n} \| = \sqrt{2+\sqrt{5}}$. 
+Note that $\sqrt{2 + \sqrt{5}} = \phi^{1/2} + \phi^{-1/2}$ with 
+$\phi = (1+\sqrt{5})/2$ (the Golden ratio).   
+\end{Exercise}
+
+\begin{Exercise}
+Let $C_n$ be the graph obtained from ${\widetilde A}_n$ 
+by adding one more edge and vertex. 
+% Investigate the norm of $C_n$ and s
+Show that 
+$\|C_n\| > \|C_{n+1}\|$ for $n \geq 1$ (decreasing!) and 
+$\lim_{n \to \infty} \| C_n \| = \sqrt{2 + \sqrt{5}}$. 
+\end{Exercise}
+
+\begin{Exercise}[Challenging]
+Try to extend the classification results to oriented graphs.
+\end{Exercise}
+
+\section{Fusion Rule Algebras}
+
+\begin{Definition}
+A *-algebra $\C[S] = \sum_{s \in S} \C s$ with a distinguished 
+countable basis $S$ containing the unit element $1$ is called 
+an {\bf fusion rule algebra} (or simply fusion algebra)  
+if the following two conditions are satisfied.
+\begin{enumerate}
+\item (Positivity) 
+For $x$, $y$, $z \in S$, the coefficient $N_{xyz}$ of $1$ in $xyz$
+(i.e., $xyz = N_{xyz}1 + \dots$) is a non-negative integer.
+\item (Duality) 
+The $*$-operation makes $S$ invariant globally
+(i.e., $x \in S$ implies $x^* \in S$) and satisfies 
+$N_{x^*y} = \delta_{x,y}$.
+\end{enumerate}
+\end{Definition}
+
+
+\begin{Lemma}~
+Let $\C[S]$ be a fusion algebra.
+\begin{enumerate}
+\item
+If $N$ is extended to $\C[S]$ by
+$N(\sum_{s \in S} c(s)s) = c(1)$, 
+then it is a tracial state in the sense
+that $N(ab) = N(ba)$, $N(a^*) = \overline{N(a)}$ 
+for $a$, $b \in \C S$ and $N(1) = 1$.
+Moreover, we have
+\[
+N(c^*c) = \sum_{s \in S} |c(s)|^2.
+\]
+\item
+For $x$, $y \in S$,
+\[
+xy = \sum_{s \in S} N_{xys^*}s.
+\]
+\item
+For $x$, $y$, $z \in S$, we have 
+\[
+N_{xyz} = N_{yzx},\quad N_{xyz} = N_{z^*y^*x^*}.
+\]
+\end{enumerate}
+In view of the second statement, we occasionally use the notation
+$N_{xy}^z$ of structure constants for $N_{xyz^*} = N_{z^*xy}$.
+\end{Lemma}
+
+\begin{proof}
+(i) $N(ab) = N(ba)$ as well as the formula for $N(c^*c)$ is 
+a consequence of the duality $N_{x^*y} = \delta_{x,y}$ and 
+the relation $N(a^*) = \overline{N(a)}$ follows from 
+$N(x) = \delta_{x,1}$
+for $x \in S$.
+
+(ii) If $xy = \sum_s c(s)s$ with $c(s) \in \C$, then the application
+of the tracial state $N$ to $xyz^*$ yields
+\[
+N_{xyz^*} = \sum_{s \in S} c(s) N_{sz^*}
+= \sum_{s \in S} c(s) \delta_{z,s}
+= c(z).
+\]
+
+(iii) is immediate from the trace property of $N$.
+\end{proof}
+
+\begin{Definition}
+Consider a *-algebra $\C[S]$ with a distinguished linear basis 
+$S$ containing the unit element $1$ such that 
+(i) the structure constants are non-negative reals, 
+(ii) the set $S$ is globally invariant under the *-operation and 
+(iii) the coefficient of $1$ in the expansion of $s^*s$ is 
+strictly positive for any $s \in S$. 
+From the previous lemma, fusion algebras fall into this class. 
+\end{Definition}
+
+\begin{Definition}
+A multiplicative linear functional $d$ on a *-algebra $\C[S]$ 
+in the above definition 
+is called a dimension function if $d(s) > 0$ and 
+$d(s^*) = d(s)$ for any $s \in S$.
+\end{Definition}
+
+\begin{Proposition}[Sunder]
+Dimension function exists and is unique 
+for a finite-dimensional *-algebra $\C[S]$. 
+\end{Proposition}
+
+\begin{proof}
+Let $C = \sum_{s \in S} s \in \C[S]$ and consider 
+the linear operator on $\C[S]$ defined by the right multiplication 
+of $C$. Then it is irreducible as a positive matrix (operator) 
+by the property $s*s = c 1 + \dots$ with $c>0$. 
+Let $\xi = \sum_{x \in S} \xi(x) x$ be its 
+Perron-Frobenius eigenvector: $\xi(x) > 0$ for $x \in S$ and 
+$\xi C$ is a positive multiple of $\xi$. 
+
+Since $s\xi \in \C[S]$ is again an eigenvector with 
+non-negative coefficients, 
+the uniqueness of Perron-Frobenius vector implies that 
+$s\xi$ is proportional to $\xi$: let $d(s)>0$ be defined by 
+$s\xi = d(s)\xi$. Clearly this defines a multiplicative 
+functional on $\C[S]$. 
+
+Let $d'$ be another multiplicative functional satisfying 
+$d'(s)>0$ for $s \in S$. Then $\sum_{s \in S} d'(S) s$ 
+is 
+\end{proof}
+\end{document}
+
+
+\section{Operator Norm}
+We shall here review some of basic notions in functional 
+analysis.  
+Recall that a (positive definite) inner product space is 
+a complex vector space $\cH$ 
+with a specified positive inner product. 
+The numerical vector space $\C^n$ is furnished with 
+the standard inner product
+\[
+(\xi|\eta) = \sum_{j=1}^n \overline{\xi_j} \eta_j.
+\]
+More generally, the free vector space 
+$\C S$ generated by a set $S$ is an inner product space 
+so that $S$ is an orthonormal basis. 
+
+Any inner product space admits a natural norm: 
+$\| \xi\| = \sqrt{(\xi|\xi)}$. The inner product space is complete 
+if any Cauchy sequence is convergent: Given 
+a sequence of vectors $\{ \xi_n\}$ satisfying 
+$\lim_{m,n \to \infty} \| \xi_m - \xi_n\| = 0$, 
+we can find a vector $\xi$ such that 
+$\lim_{n \to \infty} \| \xi_n - \xi \| = 0$. 
+Any finite-dimensional inner product space is complete. 
+
+When an inner product space is not complete, we can extend it 
+to a complete one by adding ``virtual limits'', 
+which is referred to as the completion of the inner product space.  
+
+A Hilbert space is, by definition, a complete inner product space. 
+
+The norm $\| A\|$ of a linear operator $A: \cH \to \cH$ 
+on an inner product space is defined to be 
+\[
+\| A \| = \sup \{ \| A\xi \|/\| \xi\|; 0 \not= \xi \in \cH \}.
+\]
+A linear operator $A$ is said to be bounded if $\| A\| < \infty$. 
+Any bounded operator is uniquely exetnded to a bounded linear 
+operator of the completed Hilbert space. 
+
+\begin{Example}
+Let $\{ a_j\}$ be a sequence of complex numbers and 
+$A: \C\N \to \C\N$ be a linear operator defined by 
+$(A\xi)_j = a_j \xi_j$. Then 
+\[
+\| A\| = \sup \{ |a_j|; j \geq 0\}.
+\]
+\end{Example}
+
+An eigenvector of a linear operator $A$ is a vector $\xi \not= 0$ 
+satisfying $A\xi = \lambda \xi$ with $\lambda \in \C$. 
+The complex number $\lambda$ is the eigenvalue of $\xi$. 
+If $\lambda$ is an eigenvalue of $A$, the linear operator 
+$\lambda I -A$ is not invertible. 
+The converse implication holds when $\cH$ is finite-dimensional.
+
+For a bounded linear operator $A$ on a Hilbert space, its spectrum 
+$\sigma(A)$ is 
+\[
+\sigma(A) = \{ \lambda \in \C; \text{$\lambda I -A$ admits 
+a bounded inverse} \}.
+\]
+When $\cH$ is finite-dimensional, 
+$\sigma(A)$ is the set of eigenvalues of $A$. 
+
+\begin{Example}
+For the operator $A$ associated to a bounded sequence 
+$\{ a_j\}$, 
+\[
+\sigma(A) = \text{closure of $\{ a_j; j \geq 0\}$}.
+\]
+\end{Example}
+
+\begin{Exercise}
+For the sequence $\{ a_j = e^{ij} \}$, 
+$\sigma(A) = \T$. 
+\end{Exercise}
+
+\begin{Proposition}
+The spectrum $\sigma(A)$ of a bounded linear operator $A$ 
+is a non-empty closed subset of 
+\[
+\{ z \in \C; |z| \leq \| A\| \}.
+\]
+\end{Proposition}
+
+Keywords and phrases:
+finite graph, operator norm, spectral decomposition, Perron-Frobenius
+eigenvector
+
+Achievement:
+To have a good comprehension of basic graphical notions.
+To get enough skills in spectral features of matrices.
+To get an acquaintance with what mathematical classifications mean.
+To understand the fact that mathematical research would not be
+accomplished as results of scheduled tasks.
+
+Evaluation:
+The course grade will be based entirely on homeworks
+aasigned in the occasion of problem sessions.
+
+Prerequisite:
+Set theory (basic notions and terminology)
+Linear algebra (undergraduate level)
+Analysis (limit arguments in euclidean spaces)
+
+Help: My offices hours are Wednesday 11:00-12:00 in C235 or
+by appointment via e-mail (the email address can be found
+at our group website http://www-mi.sci.ibaraki.ac.jp/)
+
+References:
+Any standard texts on linear algebra, calculus and set theory can be
+used as your references. Other related documents will be supplied
+in class.

@@ -1,0 +1,89 @@
+%WinTpicVersion3.08
+\unitlength 0.1in
+\begin{picture}( 24.0000, 14.6000)(  4.0000,-16.0000)
+% LINE 2 0 3 0
+% 2 400 400 900 400
+% 
+\special{pn 8}%
+\special{pa 400 400}%
+\special{pa 900 400}%
+\special{fp}%
+% LINE 2 0 3 0
+% 2 1500 400 1700 400
+% 
+\special{pn 8}%
+\special{pa 1500 400}%
+\special{pa 1700 400}%
+\special{fp}%
+% LINE 2 0 3 0
+% 2 2300 400 2800 400
+% 
+\special{pn 8}%
+\special{pa 2300 400}%
+\special{pa 2800 400}%
+\special{fp}%
+% LINE 2 0 3 0
+% 2 1600 400 1600 500
+% 
+\special{pn 8}%
+\special{pa 1600 400}%
+\special{pa 1600 500}%
+\special{fp}%
+% LINE 2 0 3 0
+% 2 1600 1100 1600 1500
+% 
+\special{pn 8}%
+\special{pa 1600 1100}%
+\special{pa 1600 1500}%
+\special{fp}%
+% LINE 2 2 3 0
+% 6 1000 400 1400 400 1800 400 2200 400 1600 600 1600 1000
+% 
+\special{pn 8}%
+\special{pa 1000 400}%
+\special{pa 1400 400}%
+\special{dt 0.045}%
+\special{pa 1800 400}%
+\special{pa 2200 400}%
+\special{dt 0.045}%
+\special{pa 1600 600}%
+\special{pa 1600 1000}%
+\special{dt 0.045}%
+% DOT 0 0 3 0
+% 7 1600 400 800 400 400 400 2400 400 2800 400 1600 1200 1600 1600
+% 
+\special{pn 20}%
+\special{sh 1}%
+\special{ar 1600 400 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 800 400 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 400 400 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 2400 400 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 2800 400 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 1600 1200 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 1600 1600 10 10 0  6.28318530717959E+0000}%
+% LINE 2 0 3 0
+% 2 1600 1600 1600 1500
+% 
+\special{pn 8}%
+\special{pa 1600 1600}%
+\special{pa 1600 1500}%
+\special{fp}%
+% STR 2 0 3 0
+% 3 820 210 820 310 2 0
+% $q$ edges
+\put(8.2000,-3.1000){\makebox(0,0)[lb]{$q$ edges}}%
+% STR 2 0 3 0
+% 3 2100 210 2100 310 2 0
+% $r$ edges
+\put(21.0000,-3.1000){\makebox(0,0)[lb]{$r$ edges}}%
+% STR 2 0 3 0
+% 3 1700 1010 1700 1110 2 0
+% $p$ edges
+\put(17.0000,-11.1000){\makebox(0,0)[lb]{$p$ edges}}%
+\end{picture}%

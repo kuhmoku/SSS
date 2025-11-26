@@ -1,0 +1,212 @@
+This is pdfTeX, Version 3.1415926-1.40.11+tagged-pdf (Web2C 2010) (format=latex 2010.9.30)  17 DEC 2010 07:49
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**\input oa2010.tex
+(./oa2010.tex (c:/w32tex/share/texmf/tex/latex/amslatex/amsart.cls
+Document Class: amsart 2009/07/02 v2.20.1
+\linespacing=\dimen102
+\normalparindent=\dimen103
+\normaltopskip=\skip41
+(c:/w32tex/share/texmf/tex/latex/amslatex/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip42
+
+For additional information on amsmath, use the `?' option.
+(c:/w32tex/share/texmf/tex/latex/amslatex/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(c:/w32tex/share/texmf/tex/latex/amslatex/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+(c:/w32tex/share/texmf/tex/latex/amslatex/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+(c:/w32tex/share/texmf/tex/latex/amslatex/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks15
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip43
+\multlinetaggap=\skip44
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 388.
+
+(c:/w32tex/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+(c:/w32tex/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+\copyins=\insert233
+\abstractbox=\box28
+\listisep=\skip45
+\c@part=\count91
+\c@section=\count92
+\c@subsection=\count93
+\c@subsubsection=\count94
+\c@paragraph=\count95
+\c@subparagraph=\count96
+\c@figure=\count97
+\c@table=\count98
+\abovecaptionskip=\skip46
+\belowcaptionskip=\skip47
+\captionindent=\dimen113
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks24
+)
+(c:/w32tex/share/texmf/tex/generic/misc/definition.tex
+(c:/w32tex/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+)
+(c:/w32tex/share/texmf/tex/latex/amslatex/amscd.sty
+Package: amscd 1999/11/29 v2.0
+\athelp@=\toks25
+\minaw@=\dimen114
+\bigaw@=\dimen115
+\minCDarrowwidth=\dimen116
+)
+\c@Theorem=\count99
+\c@Remark=\count100
+)
+\c@Exercise=\count101
+ (./oa2010.aux)
+\openout1 = `oa2010.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+
+(c:/w32tex/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+
+(c:/w32tex/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [1] [2] [3] [4] [5] [6]
+Overfull \hbox (5.69414pt too wide) in paragraph at lines 682--684
+\OT1/cmr/bx/n/12 Theorem 3.4. \OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 A$ \OT1/cm
+r/m/it/12 be an ir-re-ducible sym-met-ric ma-trix of non-negative
+ []
+
+[7] [8]
+Overfull \hbox (4.00218pt too wide) in paragraph at lines 800--804
+\OT1/cmr/m/n/12 then the eigenequa-tion is re-duced to the signle equa-tion $\O
+ML/cmm/m/it/12 c[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 c[]P[]\OT1/cmr/m/n/12 (\O
+ML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 ) =
+ []
+
+(./oa2006-1.tpc) [9]
+Overfull \hbox (6.65054pt too wide) in paragraph at lines 853--859
+\OT1/cmr/m/n/12 be a source of many in-ter-est-ing iden-ti-ties (so-called $\OM
+L/cmm/m/it/12 q$\OT1/cmr/m/n/12 -analogues).
+ []
+
+
+Overfull \hbox (8.55725pt too wide) in paragraph at lines 870--878
+\OT1/cmr/m/n/12 one ver-tex added to the graph $\OML/cmm/m/it/12 A[]$ \OT1/cmr/
+m/n/12 in a min-i-mal way. Let $(\OML/cmm/m/it/12 a; b; c\OT1/cmr/m/n/12 [\OML/
+cmm/m/it/12 n\OT1/cmr/m/n/12 ][]\OML/cmm/m/it/12 ; c\OT1/cmr/m/n/12 [\OML/cmm/m
+/it/12 n \OMS/cmsy/m/n/12 ^^@
+ []
+
+[10] (./oa2006-2.tpc) [11] (./oa2006-3.tpc) (./oa2006-18.tpc) (./oa2006-4.tpc)
+(./oa2006-5.tpc) [12] (./oa2006-6.tpc) (./oa2006-7.tpc) [13] (./oa2006-8.tpc)
+(./oa2006-9.tpc) (./oa2006-10.tpc) (./oa2006-11.tpc)
+Overfull \hbox (4.15068pt too wide) in paragraph at lines 1182--1186
+[]\OT1/cmr/m/n/12 We first seek for the graph of norm 2 among $\OML/cmm/m/it/12
+ T[]$\OT1/cmr/m/n/12 's. Let $(\OML/cmm/m/it/12 a; b[]; b[]; c[]\OT1/cmr/m/n/12
+ )$
+ []
+
+[14] (./oa2006-12.tpc) (./oa2006-13.tpc) (./oa2006-14.tpc) [15]
+Overfull \hbox (5.52652pt too wide) detected at line 1325
+\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 (2[]3[]5[]7[] [] ) = \OML/cmm/m/it/12 ^^^\O
+T1/cmr/m/n/12 (2[])\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 (3[])\OML/cmm/m/it/12 ^^
+^\OT1/cmr/m/n/12 (5[])\OML/cmm/m/it/12 ^^^\OT1/cmr/m/n/12 (7[]) [] = 2[] \OMS/c
+msy/m/n/12 ^^A \OT1/cmr/m/n/12 23[] \OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 45[] \
+OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 67[] []  \OML/cmm/m/it/12 ;
+ []
+
+
+Overfull \hbox (9.58553pt too wide) in paragraph at lines 1337--1337
+[] 
+ []
+
+(./oa2006-15.tpc) [16] (./oa2006-16.tpc) (./oa2006-17.tpc) [17]
+Overfull \hbox (18.40793pt too wide) in paragraph at lines 1458--1462
+\OT1/cmr/m/it/12 Problem \OT1/cmr/m/n/12 27\OT1/cmr/m/it/12 . \OT1/cmr/m/n/12 I
+n-ves-ti-gate the norm of $\OML/cmm/m/it/12 T[]$ \OT1/cmr/m/n/12 and show that 
+$[][] \OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 T[]\OMS/cmsy/m/n/12 k \OT1/cmr/m/n/12 
+=
+ []
+
+[18] [19] (./oa2010.aux) ) 
+Here is how much of TeX's memory you used:
+ 1792 strings out of 493680
+ 18808 string characters out of 3146450
+ 72712 words of memory out of 1500000
+ 4907 multiletter control sequences out of 15000+200000
+ 12780 words of font info for 49 fonts, out of 3000000 for 9000
+ 875 hyphenation exceptions out of 8191
+ 34i,13n,31p,271b,279s stack positions out of 5000i,500n,5000p,500000b,5000s
+
+Output written on oa2010.dvi (19 pages, 76196 bytes).

@@ -1,0 +1,56 @@
+%WinTpicVersion3.08
+\unitlength 0.1in
+\begin{picture}( 24.0300,  4.0300)(  4.0000, -6.0000)
+% LINE 2 0 3 0
+% 4 400 200 2000 200 1200 200 1200 600
+% 
+\special{pn 8}%
+\special{pa 400 200}%
+\special{pa 2000 200}%
+\special{fp}%
+\special{pa 1200 200}%
+\special{pa 1200 600}%
+\special{fp}%
+% DOT 0 0 3 0
+% 6 1200 600 1200 200 400 200 800 200 1600 200 2000 200
+% 
+\special{pn 20}%
+\special{sh 1}%
+\special{ar 1200 600 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 1200 200 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 400 200 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 800 200 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 1600 200 10 10 0  6.28318530717959E+0000}%
+\special{sh 1}%
+\special{ar 2000 200 10 10 0  6.28318530717959E+0000}%
+% DOT 0 0 3 0
+% 1 2400 200
+% 
+\special{pn 20}%
+\special{sh 1}%
+\special{ar 2400 200 10 10 0  6.28318530717959E+0000}%
+% LINE 2 0 3 0
+% 2 2400 200 2000 200
+% 
+\special{pn 8}%
+\special{pa 2400 200}%
+\special{pa 2000 200}%
+\special{fp}%
+% LINE 2 0 3 0
+% 2 2400 200 2800 200
+% 
+\special{pn 8}%
+\special{pa 2400 200}%
+\special{pa 2800 200}%
+\special{fp}%
+% DOT 0 0 3 0
+% 1 2800 200
+% 
+\special{pn 20}%
+\special{sh 1}%
+\special{ar 2800 200 10 10 0  6.28318530717959E+0000}%
+\end{picture}%
