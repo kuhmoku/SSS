@@ -724,6 +724,119 @@ MathJax = {
   $k=2,3,5,7,11,13,17,19,23,29,31,37,41,43,47$ に対応する項だけを足し上げるといった具合。
 <p>
   来週は、名大祭の準備ということで、授業はありませんが、行列式の全体を復習するチャンスでもあります。
+<p>
+  前回の宿題ですが、gemini とか chatgpt に
+  <br>
+  ３点 (a_1,b_1), (a_2,b_2), (a_3,b_3) を通る円の方程式を行列式を使って表わし、理由を述べよ
+  <br>
+  と聞いてみてください。概ね満足のいく答えが返ってくると思います。３点が同一直線上にある場合（先週の日誌参照）の処理があるかどうか。
+  推論部分が多くなると怪しくなります。有料版だとそれが良くなるはずですが、はてさて。
+  <p> Vandermonde determinant については、ネット上でも多くの情報があり、差積であることの証明は、因数定理を使うか帰納法を使うかに分かれますが、
+    帰納法による証明について、ここで補足しておきます。
+    <br>まず、帰納法というのは、簡単な場合から一般性のある仕組みを見出すというのが基本です。いきなり証明を書けばよいというものではありません。
+    <br>
+    ということで、$n=2,3$ でどうなっているか、まず調べるべきです。$n=3$ だと、$c-a$, $c-b$ が出てくるように素直に計算すると、
+    \[
+    \begin{vmatrix}
+    1 & a & a^2\\
+    1 & b & b^2\\
+    1 & c & c^2
+    \end{vmatrix}
+    = \begin{vmatrix}
+    0 & a-c & a^2-c^2\\
+    0 & b-c & b^2-c^2\\
+    1 & c & c^2
+    \end{vmatrix}
+    = \begin{vmatrix}
+    a-c & a^2-c^2\\
+    b-c & b^2-c^2
+    \end{vmatrix}
+    = (c-a)(c-b) \begin{vmatrix} 1 & a+c\\ 1 & b+c \end{vmatrix}
+    = (c-a)(c-b) \begin{vmatrix} 1 & a\\ 1 & b \end{vmatrix}
+    = (c-a)(c-b)(b-a). 
+    \]
+    仕組みを把握するために $n=4$ も書いてみます。
+\[
+    \begin{vmatrix}
+    1 & a & a^2 & a^3\\
+    1 & b & b^2 & b^3\\
+    1 & c & c^2 & c^3\\
+    1 & d & d^2 & d^3
+    \end{vmatrix}
+    = \begin{vmatrix}
+    0 & a-d & a^2-d^2 & a^3 - d^3\\
+    0 & b-d & b^2-d^2 & b^3-d^3\\
+    0 & c-d & c^2-d^2 & c^3-d^3\\
+    1 & d & d^2 & d^3
+    \end{vmatrix}
+    = - \begin{vmatrix}
+    a-d & a^2-d^2 & a^3-d^3\\
+    b-d & b^2-d^2 & b^3-d^3\\
+    c-d & c^2-d^3 & c^3-d^3
+    \end{vmatrix}
+    = (d-a)(d-b)(d-c)
+    \begin{vmatrix}
+    1 & a+d & a^2 + ad + d^2\\
+    1 & b+d & b^2 + bd + d^2\\
+    1 & c+d & c^2 + cd + d^2
+    \end{vmatrix}
+    = (d-a)(d-b)(d-c)
+    \begin{vmatrix}
+    1 & a & a^2 + ad\\
+    1 & b & b^2 + bd\\
+    1 & c & c^2 + cd
+    \end{vmatrix}
+    = (d-a)(d-b)(d-c)
+    \begin{vmatrix}
+    1 & a & a^2\\
+    1 & b & b^2\\
+    1 & c & c^2
+    \end{vmatrix}
+    = (d-a)(d-b)(d-c)(c-a)(c-b)(b-a). 
+    \]
+    仕組みが見えましたか。まだでしたら、$n=5$ も計算してみます。そうして、帰納法にまとめ上げます。
+    <br>
+    行列式の書き直しとしては、１行で右から $0$ を増やし、$b-a$, $c-a$, $d-a$ をくくり出すという方針で、
+    \[
+       \begin{vmatrix}
+    1 & a & a^2 & a^3\\
+    1 & b & b^2 & b^3\\
+    1 & c & c^2 & c^3\\
+    1 & d & d^2 & d^3
+    \end{vmatrix}
+    = \begin{vmatrix}
+    1 & a & a^2 & 0\\
+    1 & b & b^2 & b^3-ab^2\\
+    1 & c & c^2 & c^3-ac^2\\
+    1 & d & d^2 & d^3-ad^2
+    \end{vmatrix}
+  = \begin{vmatrix}
+    1 & a & 0 & 0\\
+    1 & b & b^2-ab & b^3-ab^2\\
+    1 & c & c^2-ac & c^3-ac^2\\
+    1 & d & d^2-ad & d^3-ad^2
+    \end{vmatrix}
+  = \begin{vmatrix}
+    1 & 0 & 0 & 0\\
+    1 & b-a & b^2-ab & b^3-ab^2\\
+    1 & c-a & c^2-ac & c^3-ac^2\\
+    1 & d-a & d^2-ad & d^3-ad^2
+    \end{vmatrix}
+  = \begin{vmatrix}
+    b-a & b^2-ab & b^3-ab^2\\
+    c-a & c^2-ac & c^3-ac^2\\
+    d-a & d^2-ad & d^3-ad^2
+    \end{vmatrix}
+    = (b-a)(c-a)(d-a)
+    \begin{vmatrix}
+    1 & b & b^2\\
+    1 & c & d^2\\
+    1 & d & d^2
+    \end{vmatrix}
+    \]
+  のように計算するのも一法。これが一番楽かも知れません。
+ <p>
+  どうも生成AIはこの試行錯誤のプロセスを説明することがうまくないようです。というか、プロセスを black box 化しての処理が本質なのかも知れません。
  </p>
 
 <!--
